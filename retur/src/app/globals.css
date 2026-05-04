@@ -1,9 +1,13 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 
-/* Aqui colocaremos as nossas variáveis de cores mais tarde */
+@theme {
+  --color-retur-terra: #C66A38;
+  --color-retur-areia: #FAF8F5;
+  --color-retur-escuro: #151A22;
+  --color-retur-texto: #333333;
+}
+
 body {
-  background-color: #FAF8F5; /* Uma cor de fundo base inspirada nos teus designs (um bege muito claro) */
-  color: #333333;
+  background-color: var(--color-retur-areia);
+  color: var(--color-retur-texto);
 }
