@@ -29,10 +29,13 @@ export function Header() {
         <Link href="/blog" className="hover:text-retur-terra transition-colors">Blog</Link>
         <Link href="/contato" className="hover:text-retur-terra transition-colors">Contato</Link>
       </nav>
-
+      <a 
+            href="https://wa.me/5511999999999?text=Olá, gostaria de ajuda para montar meu roteiro no Atacama!"
+            target="_blank"
+            rel="noopener noreferrer">
       <button className="bg-retur-terra text-white px-6 py-2.5 rounded-lg font-bold text-sm hover:bg-orange-700 transition-all shadow-md">
         Reservar Agora
-      </button>
+      </button></a>
     </header>
   );
 }
