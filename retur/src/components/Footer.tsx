@@ -24,7 +24,6 @@ export function Footer() {
           <h6 className="font-bold text-retur-texto mb-6 uppercase tracking-widest text-xs">Explorar</h6>
           <ul className="space-y-4 text-sm text-gray-500">
             <li><Link href="/destinos" className="hover:text-retur-terra transition-colors">Destinos</Link></li>
-            <li><Link href="/roteiros" className="hover:text-retur-terra transition-colors">Roteiros</Link></li>
             <li><Link href="/blog" className="hover:text-retur-terra transition-colors">Blog</Link></li>
           </ul>
         </div>
@@ -33,7 +32,6 @@ export function Footer() {
           <h6 className="font-bold text-retur-texto mb-6 uppercase tracking-widest text-xs">Institucional</h6>
           <ul className="space-y-4 text-sm text-gray-500">
             <li><Link href="/sobre" className="hover:text-retur-terra transition-colors">Sobre Nós</Link></li>
-            <li><Link href="/sustentabilidade" className="hover:text-retur-terra transition-colors">Sustentabilidade</Link></li>
             <li><Link href="/contato" className="hover:text-retur-terra transition-colors">Contato</Link></li>
           </ul>
         </div>

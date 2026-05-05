@@ -48,7 +48,7 @@ ${mensagem}`;
         <div className="absolute inset-0 z-0">
           <img 
             className="w-full h-full object-cover" 
-            src="/images/contato-hero.jpg" 
+            src="/images/atacama/atacama-ruta-hori.jpg" 
             alt="Atendimento Retur" 
           />
           <div className="absolute inset-0 bg-black/50"></div>
@@ -198,7 +198,7 @@ ${mensagem}`;
               </div>
               {/* Maps Placeholder */}
               <div className="w-full h-56 bg-slate-200 rounded-2xl overflow-hidden relative group">
-                <img className="w-full h-full object-cover" src="/images/uyuni/uyuni-1.jpg" alt="Mapa San Pedro" />
+                <img className="w-full h-full object-cover" src="/images/mapa.png" alt="Mapa San Pedro" />
                 <div className="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-all"></div>
               </div>
             </div>
