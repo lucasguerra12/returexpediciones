@@ -7,7 +7,7 @@ export default function UyuniPage() {
       {/* 1. HERO SECTION */}
       <section 
         className="relative h-[70vh] flex items-end pb-20 bg-cover bg-center"
-        style={{ backgroundImage: "url('/images/uyuni-hero.jpg')" }}
+        style={{ backgroundImage: "url('/images/uyuni/uyuni-hero.jpg')" }}
       >
         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
         <div className="relative z-10 px-8 max-w-[1440px] mx-auto w-full text-white">
@@ -46,36 +46,15 @@ export default function UyuniPage() {
 
         <div className="grid grid-cols-2 gap-4 h-[600px]">
           <div className="rounded-2xl overflow-hidden h-full shadow-lg">
-            <img src="/images/uyuni-gal-1.jpg" className="w-full h-full object-cover" alt="Salar de Uyuni" />
+            <img src="/images/uyuni/uyuni-desertodesal.jpeg" className="w-full h-full object-cover" alt="Salar de Uyuni" />
           </div>
           <div className="grid grid-rows-2 gap-4 h-full">
             <div className="rounded-2xl overflow-hidden shadow-lg">
-              <img src="/images/uyuni-gal-2.jpg" className="w-full h-full object-cover" alt="Ilha Incahuasi" />
+              <img src="/images/uyuni/uyuni-hero.jpg" className="w-full h-full object-cover" alt="Ilha Incahuasi" />
             </div>
             <div className="rounded-2xl overflow-hidden shadow-lg">
-              <img src="/images/uyuni-gal-3.jpg" className="w-full h-full object-cover" alt="Lagoa Colorada" />
+              <img src="/images/uyuni/uyuni-vertical3.png" className="w-full h-full object-cover" alt="Lagoa Colorada" />
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* 3. O QUE VOCÊ IRÁ VER */}
-      <section className="py-24 bg-retur-areia px-8">
-        <div className="max-w-[1440px] mx-auto w-full text-center">
-          <h2 className="text-4xl font-bold mb-16">O que você irá ver</h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {[
-              { title: "Espelho d'água", img: "uyuni-espelho.jpg" },
-              { title: "Ilha Incahuasi", img: "uyuni-ilha.jpg" },
-              { title: "Laguna Colorada", img: "uyuni-laguna.jpg" },
-              { title: "Cemitério de Trens", img: "uyuni-trens.jpg" },
-            ].map((item, idx) => (
-              <div key={idx} className="group relative h-80 rounded-2xl overflow-hidden shadow-md">
-                <img src={`/images/${item.img}`} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" alt={item.title} />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
-                <h4 className="absolute bottom-6 left-6 text-white font-bold text-xl">{item.title}</h4>
-              </div>
-            ))}
           </div>
         </div>
       </section>

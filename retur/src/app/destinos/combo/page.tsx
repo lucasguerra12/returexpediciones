@@ -9,7 +9,7 @@ export default function ComboPage() {
         {/* Lado Esquerdo - Atacama */}
         <div className="relative w-full h-1/2 md:h-full md:w-1/2 group">
           <div className="absolute inset-0 bg-black/40 z-10 transition-colors duration-500 group-hover:bg-black/20"></div>
-          <img className="absolute inset-0 w-full h-full object-cover" src="/images/atacama-hero.jpg" alt="Atacama" />
+          <img className="absolute inset-0 w-full h-full object-cover" src="/images/atacama/atacama-licancanbur-vulcao-hori.jpeg" alt="Atacama" />
           <div className="absolute bottom-10 left-10 z-20">
             <span className="text-white/80 font-inter font-medium uppercase tracking-widest text-sm">Chile</span>
             <h3 className="text-white font-bold text-3xl">Deserto do Atacama</h3>
@@ -19,7 +19,7 @@ export default function ComboPage() {
         {/* Lado Direito - Uyuni */}
         <div className="relative w-full h-1/2 md:h-full md:w-1/2 group">
           <div className="absolute inset-0 bg-black/40 z-10 transition-colors duration-500 group-hover:bg-black/20"></div>
-          <img className="absolute inset-0 w-full h-full object-cover" src="/images/uyuni-hero.jpg" alt="Uyuni" />
+          <img className="absolute inset-0 w-full h-full object-cover" src="/images/uyuni/uyuni.jpg" alt="Uyuni" />
           <div className="absolute bottom-10 right-10 z-20 text-right">
             <span className="text-white/80 font-inter font-medium uppercase tracking-widest text-sm">Bolívia</span>
             <h3 className="text-white font-bold text-3xl">Salar de Uyuni</h3>
@@ -36,7 +36,6 @@ export default function ComboPage() {
               <span className="bg-white/20 text-white px-4 py-1.5 rounded-full text-sm font-medium border border-white/30 backdrop-blur-md">2 países</span>
               <span className="bg-white/20 text-white px-4 py-1.5 rounded-full text-sm font-medium border border-white/30 backdrop-blur-md">Guia bilíngue</span>
             </div>
-            <p className="text-white font-inter font-medium mb-8">A partir de <span className="text-2xl font-bold">$1.250</span> por pessoa</p>
             <a href="#roteiro" className="inline-block bg-[#D4773C] text-white px-10 py-4 rounded-full font-bold text-lg hover:bg-[#B35D24] transition-all transform hover:scale-105 shadow-[0_10px_30px_-10px_rgba(212,119,60,0.5)]">
               Ver Roteiros
             </a>

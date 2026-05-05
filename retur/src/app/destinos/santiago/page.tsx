@@ -7,7 +7,7 @@ export default function SantiagoPage() {
       {/* 1. HERO SECTION */}
       <section 
         className="relative h-[70vh] flex items-end pb-20 bg-cover bg-center"
-        style={{ backgroundImage: "url('/images/santiago-hero.jpg')" }}
+        style={{ backgroundImage: "url('/images/santiago/santiago-hero.jpg')" }}
       >
         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
         <div className="relative z-10 px-8 max-w-[1440px] mx-auto w-full text-white">
@@ -46,36 +46,15 @@ export default function SantiagoPage() {
 
         <div className="grid grid-cols-2 gap-4 h-[600px]">
             <div className="rounded-2xl overflow-hidden shadow-lg">
-              <img src="/images/santiago-gal-3.jpeg" className="w-full h-full object-cover" alt="Valle Nevado" />
+              <img src="/images/santiago/santiago-gal-3.jpeg" className="w-full h-full object-cover" alt="Valle Nevado" />
             </div>
           <div className="grid grid-rows-2 gap-4 h-full">
             <div className="rounded-2xl overflow-hidden shadow-lg">
-              <img src="/images/santiago-gal-2.jpg" className="w-full h-full object-cover" alt="Vinícola" />
+              <img src="/images/santiago/santiago-amigos.jpeg" className="w-full h-full object-cover" alt="Vinícola" />
             </div>
             <div className="rounded-2xl overflow-hidden h-full shadow-lg">
-            <img src="/images/santiago-gal-1.jpg" className="w-full h-full object-cover" alt="Centro de Santiago" />
+            <img src="/images/santiago/santiago-neve.jpeg" className="w-full h-full object-cover" alt="Centro de Santiago" />
           </div>
-          </div>
-        </div>
-      </section>
-
-      {/* 3. O QUE VOCÊ IRÁ VER */}
-      <section className="py-24 bg-retur-areia px-8">
-        <div className="max-w-[1440px] mx-auto w-full">
-          <h2 className="text-4xl font-bold text-center mb-16">O Que Você Irá Ver</h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {[
-              { title: 'Sky Costanera', img: 'santiago-sky.jpg' },
-              { title: 'Cajón del Maipo', img: 'santiago-cajon.jpg' },
-              { title: 'Valle Nevado', img: 'santiago-neve.jpeg' },
-              { title: 'Bairro Lastarria', img: 'santiago-bairro.jpg' },
-            ].map((item, idx) => (
-              <div key={idx} className="group relative h-80 rounded-2xl overflow-hidden shadow-md">
-                <img src={`/images/${item.img}`} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" alt={item.title} />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
-                <h4 className="absolute bottom-6 left-6 text-white font-bold text-xl">{item.title}</h4>
-              </div>
-            ))}
           </div>
         </div>
       </section>
