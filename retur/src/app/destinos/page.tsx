@@ -7,7 +7,7 @@ export default function Destinos() {
       title: "Deserto do Atacama",
       location: "San Pedro de Atacama, Chile",
       description: "O deserto mais árido do mundo, onde paisagens lunares e lagoas altiplânicas criam um cenário inesquecível.",
-      image: "/images/dest-atacama.jpg",
+      image: "/images/atacama/atacama-valle.jpg",
       tag: "Mais Popular",
       altitude: "2.400m",
       epoca: "Mar - Nov",
@@ -19,34 +19,34 @@ export default function Destinos() {
       title: "Salar de Uyuni",
       location: "Potosí, Bolívia",
       description: "O maior deserto de sal do mundo, um horizonte infinito que se transforma em um espelho perfeito durante o verão.",
-      image: "/images/dest-uyuni.jpg",
+      image: "/images/uyuni/uyuni-aventureiro.JPEG",
       altitude: "3.650m",
       epoca: "Jan - Abr",
       temp: "-10°C a 15°C",
       features: ["Espelho d'água", "Ilha Incahuasi", "Cemitério de Trens", "Lagoas Coloradas"]
     },
-    {
-      id: "combo",
-      title: "Expedição Atacama + Uyuni",
-      location: "Chile & Bolívia",
-      description: "A jornada definitiva pelos Andes, conectando os dois destinos mais surreais da América do Sul em uma única travessia.",
-      image: "/images/dest-combo.jpg",
-      tag: "Experiência Completa",
-      duracao: "7 a 10 dias",
-      altitude: "Até 4.500m",
-      features: ["O melhor dos dois destinos", "Travessia exclusiva 4x4", "Guia bilíngue especializado"]
-    },
+    
     {
       id: "santiago",
       title: "Santiago do Chile",
       location: "Santiago, Chile",
       description: "Entre vinícolas premiadas e a imponente Cordilheira dos Andes. A mistura perfeita de cosmopolitismo e natureza exuberante.",
-      image: "/images/dest-santiago.jpg",
+      image: "/images/santiago/santiago-horizontal.jpeg",
       altitude: "520m",
       epoca: "Todo o ano",
       temp: "-2°C a 30°C",
       features: ["Vinícolas Premium", "Cajón del Maipo", "Valle Nevado (Inverno)", "Sky Costanera"]
-    }
+    },{
+      id: "combo",
+      title: "Expedição Atacama + Uyuni",
+      location: "Chile & Bolívia",
+      description: "A jornada definitiva pelos Andes, conectando os dois destinos mais surreais da América do Sul em uma única travessia.",
+      image: "/images/combo.png",
+      tag: "Experiência Completa",
+      duracao: "7 a 10 dias",
+      altitude: "Até 4.500m",
+      features: ["O melhor dos dois destinos", "Travessia exclusiva 4x4", "Guia bilíngue especializado"]
+    },
   ];
 
   return (
@@ -54,8 +54,8 @@ export default function Destinos() {
       
       {/* HERO SECTION */}
       <section 
-        className="relative h-[90vh] flex items-center justify-center bg-cover bg-center"
-        style={{ backgroundImage: "url('/images/hero-destinos.jpg')" }}
+        className="relative h-[80vh] flex items-center justify-center bg-cover bg-center"
+        style={{ backgroundImage: "url('/images/destinos-hero.png')" }}
       >
         <div className="absolute inset-0 bg-black/50"></div>
         <div className="relative z-10 text-center text-white px-4">

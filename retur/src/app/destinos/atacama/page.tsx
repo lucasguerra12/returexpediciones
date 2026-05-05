@@ -7,7 +7,7 @@ export default function AtacamaPage() {
       {/* 1. HERO SECTION */}
       <section 
         className="relative h-[80vh] flex items-end pb-20 bg-cover bg-center"
-        style={{ backgroundImage: "url('/images/atacama-hero.jpg')" }}
+        style={{ backgroundImage: "url('/images/atacama/atacama.jpg')" }}
       >
         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
         <div className="relative z-10 px-8 max-w-[1440px] mx-auto w-full text-white">
@@ -47,40 +47,18 @@ export default function AtacamaPage() {
         {/* Grid de Fotos Estilo Galeria */}
         <div className="grid grid-cols-2 gap-4 h-[600px]">
           <div className="rounded-2xl overflow-hidden h-full shadow-lg">
-            <img src="/images/atacama-gal-1.jpg" className="w-full h-full object-cover" alt="Atacama Paisagem" />
+            <img src="/images/atacama/atacama-multi.png" className="w-full h-full object-cover" alt="Atacama Paisagem" />
           </div>
           <div className="grid grid-rows-2 gap-4 h-full">
             <div className="rounded-2xl overflow-hidden shadow-lg">
-              <img src="/images/atacama-gal-2.jpg" className="w-full h-full object-cover" alt="Salar Atacama" />
+              <img src="/images/atacama/atacama-geysers-paisagem.jpg" className="w-full h-full object-cover" alt="Salar Atacama" />
             </div>
             <div className="rounded-2xl overflow-hidden shadow-lg">
-              <img src="/images/atacama-gal-3.jpg" className="w-full h-full object-cover" alt="Geysers" />
+              <img src="/images/atacama/atacama-amigos.jpg" className="w-full h-full object-cover" alt="Geysers" />
             </div>
           </div>
         </div>
       </section>
-
-      {/* 3. O QUE VOCÊ IRÁ VER */}
-      <section className="py-24 bg-retur-areia px-8">
-        <div className="max-w-[1440px] mx-auto w-full">
-          <h2 className="text-4xl font-bold text-center mb-16">O Que Você Irá Ver</h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {[
-              { title: 'Valle de la Luna', img: 'atacama-v-luna.jpg' },
-              { title: 'Geysers del Tatio', img: 'atacama-geyser.jpg' },
-              { title: 'Lagoas Escondidas', img: 'atacama-lagoas.jpg' },
-              { title: 'Vias Lácteas', img: 'atacama-astros.jpg' },
-            ].map((item, idx) => (
-              <div key={idx} className="group relative h-80 rounded-2xl overflow-hidden shadow-md">
-                <img src={`/images/${item.img}`} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" alt={item.title} />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
-                <h4 className="absolute bottom-6 left-6 text-white font-bold text-xl">{item.title}</h4>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* 4. PASSEIOS NO ATACAMA (Secção Adicionada - Fiel ao Protótipo) */}
       <section className="py-24 px-8 max-w-[1440px] mx-auto w-full">
         <div className="mb-12">
@@ -135,26 +113,9 @@ export default function AtacamaPage() {
                 </div>
                 <h3 className="text-xl font-bold mb-3 text-retur-texto">{tour.title}</h3>
                 <p className="text-sm text-gray-500 mb-8 leading-relaxed">{tour.desc}</p>
-                
-                <div className="mt-auto flex justify-between items-end border-t border-gray-100 pt-6">
-                  <div>
-                    <span className="text-[10px] text-gray-400 uppercase tracking-widest block mb-1">A partir de</span>
-                    <span className="text-2xl font-bold text-retur-terra font-inter">R$ {tour.price}</span>
-                  </div>
-                  <span className="text-retur-terra font-bold text-xs uppercase tracking-widest flex items-center gap-1 group-hover:gap-2 transition-all">
-                    Explorar <span className="material-symbols-outlined text-sm">arrow_forward</span>
-                  </span>
-                </div>
               </div>
             </div>
           ))}
-        </div>
-
-        {/* Botão Ver Todos os Passeios centralizado */}
-        <div className="mt-16 flex justify-center">
-          <Link href="/passeios" className="bg-white border border-gray-200 text-retur-texto px-8 py-4 rounded-xl font-bold hover:border-retur-terra hover:text-retur-terra hover:shadow-lg transition-all flex items-center gap-2">
-            Ver todos os passeios <span className="material-symbols-outlined">grid_view</span>
-          </Link>
         </div>
       </section>
 
@@ -193,7 +154,7 @@ export default function AtacamaPage() {
             rel="noopener noreferrer"
             className="bg-white text-retur-terra px-10 py-5 rounded-xl font-bold text-lg hover:shadow-2xl transition-all inline-flex items-center gap-3"
           >
-            Solicitar Orçamento <span className="material-symbols-outlined">whatsapp</span>
+            Solicitar Orçamento <span className="material-symbols-outlined"></span>
           </a>
         </div>
       </section>

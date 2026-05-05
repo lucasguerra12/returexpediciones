@@ -3,9 +3,10 @@ import Link from 'next/link';
 export function Header() {
   return (
     <header className="w-full py-4 px-8 flex items-center justify-between bg-white/90 backdrop-blur-md fixed top-0 z-50 border-b border-gray-100">
+      <Link href="/">
+      <img src="/images/ReturLogo.png" alt="Retur Expedições" className="h-10" />
       <div className="text-retur-terra font-bold text-2xl tracking-tighter">
-        <Link href="/">Retur Expedições</Link>
-      </div>
+      </div></Link>
 
       <nav className="hidden md:flex gap-8 text-sm font-medium uppercase tracking-widest text-retur-texto items-center">
         <Link href="/" className="hover:text-retur-terra transition-colors">Início</Link>

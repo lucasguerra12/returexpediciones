@@ -12,17 +12,17 @@ export default function Home() {
       {/* 1. HERO SECTION */}
       <section 
         className="relative h-[90vh] flex items-center justify-center bg-cover bg-center"
-        style={{ backgroundImage: "url('/images/hero-bg.jpg')" }}
+        style={{ backgroundImage: "url('/images/santiago/santiago-hero.jpg')" }}
       >
         <div className="absolute inset-0 bg-black/40"></div>
         <div className="relative z-10 text-center text-white px-4 max-w-4xl">
-          <h1 className="text-4xl md:text-7xl font-bold mb-6 tracking-tight leading-tight">
-            Viva o Atacama e o Uyuni com Quem Realmente Entende
+          <h1 className="text-4xl md:text-7xl font-bold mb-3 tracking-tight leading-tight">
+            Viva o Atacama, Santiago e o Uyuni com Quem Realmente Entende
           </h1>
-          <p className="text-lg md:text-xl mb-8 font-light opacity-90">
+          <p className="text-lg md:text-xl mb-7 font-light opacity-90">
             Roteiros exclusivos desde 2018 | Guias especializados | Atendimento em Português
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <div className="flex flex-col sm:flex-row gap-5 justify-center">
             <Link 
               href="/destinos" 
               className="bg-retur-terra hover:bg-orange-700 text-white px-10 py-4 rounded-md font-semibold transition-all shadow-lg"
@@ -44,8 +44,9 @@ export default function Home() {
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {/* Card Atacama */}
+          <Link href="/destinos/atacama" className="group relative h-[500px] rounded-2xl overflow-hidden cursor-pointer shadow-xl">
           <div className="group relative h-[500px] rounded-2xl overflow-hidden cursor-pointer shadow-xl">
-            <img src="/images/dest-atacama.jpg" alt="Atacama" className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
+            <img src="/images/atacama/atacama-ruta-hori.jpg" alt="Atacama" className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
             <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent"></div>
             <div className="absolute bottom-8 left-8 text-white">
               <h3 className="text-2xl font-bold mb-2">ATACAMA</h3>
@@ -55,10 +56,11 @@ export default function Home() {
               </span>
             </div>
           </div>
+          </Link> 
 
           {/* Card Uyuni */}
           <div className="group relative h-[500px] rounded-2xl overflow-hidden cursor-pointer shadow-xl">
-            <img src="/images/dest-uyuni.jpg" alt="Uyuni" className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
+            <img src="/images/uyuni/uyuni-vertical3.png" alt="Uyuni" className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
             <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent"></div>
             <div className="absolute bottom-8 left-8 text-white">
               <h3 className="text-2xl font-bold mb-2">SALAR DE UYUNI</h3>
@@ -71,7 +73,7 @@ export default function Home() {
 
           {/* Card Santiago (Adicionado) */}
           <div className="group relative h-[500px] rounded-2xl overflow-hidden cursor-pointer shadow-xl">
-            <img src="/images/dest-santiago.jpg" alt="Santiago" className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
+            <img src="/images/santiago/santiago-gal-3.jpeg" alt="Santiago" className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
             <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent"></div>
             <div className="absolute bottom-8 left-8 text-white">
               <h3 className="text-2xl font-bold mb-2">SANTIAGO</h3>
@@ -84,7 +86,7 @@ export default function Home() {
 
           {/* Card Combo */}
           <div className="group relative h-[500px] rounded-2xl overflow-hidden cursor-pointer shadow-xl border-2 border-retur-terra">
-            <img src="/images/dest-combo.jpg" alt="Atacama + Uyuni" className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
+            <img src="/images/uyuni/dest-uyuni.jpg" alt="Atacama + Uyuni" className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
             <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent"></div>
             <div className="absolute top-6 right-6 bg-retur-terra text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-widest">
               Experiência Completa
@@ -96,62 +98,6 @@ export default function Home() {
                 VER COMBO <span className="text-xl">→</span>
               </span>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* 3. TOURS MAIS POPULARES */}
-      <section className="py-20 bg-[#F8F9FA] px-8 border-y border-gray-100">
-        <div className="max-w-[1440px] mx-auto w-full">
-          <div className="flex justify-between items-end mb-12">
-            <div>
-              <h2 className="text-4xl font-bold text-retur-texto mb-2">Tours Mais Populares</h2>
-              <p className="text-gray-500">Explore nossas expedições favoritas e mais bem avaliadas.</p>
-            </div>
-            <Link href="/passeios" className="text-retur-terra font-semibold hover:underline">Ver Todos →</Link>
-          </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {[
-              { title: 'Geyser del Tatio', price: '380', img: 'tour-1.jpg', duration: '7 horas', people: '12', type: 'Atacama' },
-              { title: 'Lagunas Baltinache', price: '320', img: 'tour-2.jpg', duration: '5 horas', people: '10', type: 'Atacama' },
-              { title: 'Isla Incahuasi', price: '1.250', img: 'tour-3.jpg', duration: 'Full Day', people: '6', type: 'Uyuni' },
-              { title: 'Laguna Colorada', price: '2.080', img: 'tour-4.jpg', duration: '3 dias', people: '6', type: 'Combo' },
-            ].map((tour, idx) => (
-              <div key={idx} className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-all border border-gray-200 flex flex-col h-full">
-                <div className="relative h-56">
-                  <img src={`/images/${tour.img}`} alt={tour.title} className="w-full h-full object-cover" />
-                  <span className="absolute top-4 left-4 bg-white/90 backdrop-blur text-[10px] font-bold px-2 py-1 rounded text-retur-texto uppercase">
-                    {tour.type}
-                  </span>
-                </div>
-                <div className="p-6 flex flex-col flex-grow">
-                  <h4 className="font-bold text-xl mb-4">{tour.title}</h4>
-                  <div className="space-y-3 mb-6">
-                    <p className="text-sm text-gray-500 flex items-center gap-2">
-                      <span className="material-symbols-outlined text-[18px]">schedule</span> {tour.duration}
-                    </p>
-                    <p className="text-sm text-gray-500 flex items-center gap-2">
-                      <span className="material-symbols-outlined text-[18px]">group</span> Máx. {tour.people} pessoas
-                    </p>
-                  </div>
-                  <div className="mt-auto flex justify-between items-center pt-4 border-t border-gray-100">
-                    <div>
-                      <span className="text-[10px] text-gray-400 block uppercase tracking-widest">A partir de</span>
-                      <span className="font-bold text-retur-terra text-2xl font-inter">R$ {tour.price}</span>
-                    </div>
-                    <a 
-                      href={getWhatsAppLink(tour.title)}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="bg-retur-areia border border-gray-200 text-retur-texto w-12 h-12 rounded-full flex items-center justify-center hover:bg-retur-terra hover:text-white hover:border-retur-terra transition-all"
-                    >
-                      <span className="material-symbols-outlined">more</span>
-                    </a>
-                  </div>
-                </div>
-              </div>
-            ))}
           </div>
         </div>
       </section>
@@ -222,9 +168,9 @@ export default function Home() {
       {/* 6. CTA FINAL */}
       <section 
         className="relative h-[500px] flex items-center justify-center bg-cover bg-center overflow-hidden"
-        style={{ backgroundImage: "url('/images/cta-bg.jpg')" }}
+        style={{ backgroundImage: "url('/images/atacama/atacama-ruta-hori.jpg')" }}
       >
-        <div className="absolute inset-0 bg-retur-escuro/60 backdrop-blur-[2px]"></div>
+        <div className="absolute inset-0 bg-retur-escuro/60 "></div>
         <div className="relative z-10 text-center text-white px-4">
           <h2 className="text-4xl md:text-5xl font-bold mb-6">Pronto para a sua próxima aventura?</h2>
           <p className="text-lg mb-10 opacity-80">Deixe os detalhes com os especialistas e foque apenas em viver o momento.</p>
