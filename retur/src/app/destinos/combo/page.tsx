@@ -62,14 +62,19 @@ export default function ComboPage() {
               <span className="bg-white/20 text-white px-4 py-1.5 rounded-full text-sm font-medium border border-white/30 backdrop-blur-md">2 países</span>
               <span className="bg-white/20 text-white px-4 py-1.5 rounded-full text-sm font-medium border border-white/30 backdrop-blur-md">Guia bilíngue</span>
             </div>
-            <a href="#roteiro" className="inline-block bg-[#D4773C] text-white px-10 py-4 rounded-full font-bold text-lg hover:bg-[#B35D24] transition-all transform hover:scale-105 shadow-[0_10px_30px_-10px_rgba(212,119,60,0.5)]">
-              Ver Roteiros
-            </a>
+            <div className="flex flex-col sm:flex-row gap-5 justify-center">
+             <a 
+            href="https://wa.me/5511999999999?text=Olá, gostaria de ajuda para montar meu roteiro no Atacama!"
+            target="_blank"
+            rel="noopener noreferrer">
+            <button className="bg-[#D4773C] text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-[#c95e1a] transition-colors shadow-lg flex items-center justify-center gap-2">
+              Solicitar Orçamento
+            </button></a>
+          </div>
           </div>
         </div>
       </section>
 
-      {/* 2. POR QUE FAZER O COMBO */}
       <section className="py-24 max-w-7xl mx-auto px-8">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold mb-4 text-[#221a15]">Por que fazer o combo?</h2>
@@ -92,60 +97,7 @@ export default function ComboPage() {
         </div>
       </section>
 
-      {/* 3. ROTEIRO TÍPICO (Timeline Vertical Dinâmica) */}
-      <section id="roteiro" className="relative py-24 px-8 overflow-hidden bg-white">
-        
-        {/* IMAGEM DE FUNDO (MAPA APAGADO) */}
-        <div className="absolute inset-0 z-0 opacity-5 pointer-events-none">
-          <img 
-            src="/images/mapa-fundo-roteiro.jpg" 
-            alt="Textura de Mapa" 
-            className="w-full h-full object-cover" 
-          />
-        </div>
-
-        {/* Todo o conteúdo precisa ficar acima do fundo (relative z-10) */}
-        <div className="max-w-4xl mx-auto relative z-10">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-8 text-[#221a15]">Roteiro Típico</h2>
-            <div className="inline-flex bg-white p-1.5 rounded-full shadow-[0_10px_30px_-10px_rgba(0,0,0,0.08)] border border-slate-100">
-              <button 
-                onClick={() => setRoteiroDias(7)}
-                className={`px-8 py-3 rounded-full font-bold text-sm transition-all ${roteiroDias === 7 ? 'bg-[#D4773C] text-white shadow-md' : 'text-[#55433a] hover:text-[#221a15]'}`}
-              >
-                7 Dias
-              </button>
-              <button 
-                onClick={() => setRoteiroDias(10)}
-                className={`px-8 py-3 rounded-full font-bold text-sm transition-all ${roteiroDias === 10 ? 'bg-[#D4773C] text-white shadow-md' : 'text-[#55433a] hover:text-[#221a15]'}`}
-              >
-                10 Dias
-              </button>
-            </div>
-          </div>
-
-          {/* Linha do tempo que se adapta ao estado */}
-          <div className="relative space-y-12 before:absolute before:inset-0 before:ml-5 md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-slate-200 before:to-transparent">
-            {roteiroAtivo.map((item, idx) => (
-              <div key={idx} className="relative flex flex-col md:flex-row items-center justify-between md:odd:flex-row-reverse group opacity-0 animate-fadeIn" style={{ animationDelay: `${idx * 0.1}s` }}>
-                <div className="flex items-center justify-center w-12 h-12 rounded-full border-4 border-[#F8F6F3] bg-[#D4773C] text-white shadow-lg shrink-0 md:order-1 absolute left-[-6px] md:static z-10 transition-transform group-hover:scale-110">
-                  <span className="material-symbols-outlined text-sm">{item.icon}</span>
-                </div>
-                <div className="w-[calc(100%-3rem)] ml-auto md:ml-0 md:w-[45%] p-6 rounded-2xl bg-white shadow-[0_10px_30px_-10px_rgba(0,0,0,0.08)] border border-slate-100 hover:border-[#D4773C]/30 transition-colors">
-                  <div className="flex items-center justify-between mb-4">
-                    <time className="font-inter font-bold text-xs uppercase tracking-widest text-[#D4773C]">{item.day}</time>
-                  </div>
-                  <h4 className="text-xl font-bold mb-2 text-[#221a15]">{item.title}</h4>
-                  <p className="text-[#55433a] font-inter text-sm mb-6 leading-relaxed">{item.desc}</p>
-                  <div className="h-32 overflow-hidden rounded-xl">
-                    <img className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" src={`/images/${item.img}`} alt={item.title} />
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      
 
       {/* 4. MAPA DA ROTA */}
       <section className="py-24 max-w-7xl mx-auto px-8">
@@ -192,7 +144,7 @@ export default function ComboPage() {
             </div>
           </div>
           <div className="h-[400px] lg:h-auto min-h-[500px]">
-            <img className="w-full h-full object-cover" src="/images/mapa.png" alt="Mapa da Rota Atacama para Uyuni" />
+            <img className="w-full h-full object-cover" src="/images/salarmapa.png" alt="Mapa da Rota Atacama para Uyuni" />
           </div>
         </div>
       </section>
