@@ -175,7 +175,7 @@ export default function SobreNosPage() {
           
           <div className="flex flex-col sm:flex-row justify-center items-center gap-4">
             <a 
-              href="https://wa.me/5511999999999?text=Olá! Gostaria de planejar minha viagem com a Retur." 
+              href="https://wa.me/5517997697872?text=Olá! Gostaria de planejar minha viagem com a Retur." 
               target="_blank" 
               rel="noopener noreferrer"
               className="w-full sm:w-auto bg-[#D4773C] text-white px-10 py-4 rounded-xl font-bold text-lg hover:bg-[#B35D24] shadow-lg transition-all flex items-center justify-center gap-2"

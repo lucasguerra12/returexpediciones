@@ -3,7 +3,7 @@ import Link from "next/link";
 export default function Home() {
   const getWhatsAppLink = (tourName: string) => {
     const message = encodeURIComponent(`Olá! Gostaria de mais informações e um orçamento para o tour: ${tourName}`);
-    return `https://wa.me/5511999999999?text=${message}`;
+    return `https://wa.me/5517997697872?text=${message}`;
   };
 
   return (
@@ -30,7 +30,7 @@ export default function Home() {
               Conhecer Destinos
             </Link>
              <a 
-            href="https://wa.me/5511999999999?text=Olá, gostaria de ajuda para montar meu roteiro no Atacama!"
+            href="https://wa.me/5517997697872?text=Olá, gostaria de ajuda para montar meu roteiro no Atacama!"
             target="_blank"
             rel="noopener noreferrer">
             <button className="bg-white/10 hover:bg-white/20 backdrop-blur-md border border-white/40 text-white px-10 py-4 rounded-md font-semibold transition-all">
@@ -179,7 +179,7 @@ export default function Home() {
           <h2 className="text-4xl md:text-5xl font-bold mb-6">Pronto para a sua próxima aventura?</h2>
           <p className="text-lg mb-10 opacity-80">Deixe os detalhes com os especialistas e foque apenas em viver o momento.</p>
           <a 
-            href="https://wa.me/5511999999999?text=Olá, quero planejar minha próxima aventura!" 
+            href="https://wa.me/5517997697872?text=Olá, quero planejar minha próxima aventura!" 
             target="_blank"
             rel="noopener noreferrer"
             className="bg-retur-terra hover:bg-orange-700 text-white px-12 py-4 rounded-md font-bold text-lg transition-all shadow-2xl inline-flex items-center gap-3"
