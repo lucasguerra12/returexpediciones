@@ -71,28 +71,19 @@ export default function AtacamaPage() {
             {
               title: 'Pôr do Sol no Valle de la Luna',
               desc: 'A experiência clássica de ver as cores do deserto mudarem com o cair do sol sobre as formações de sal.',
-              price: '380',
               img: 'atacama-tour-1.jpg',
-              duration: '5h',
-              people: '12',
               tag: 'POPULAR'
             },
             {
               title: 'Tour Astronômico Premium',
               desc: 'Observação do céu mais limpo do planeta com telescópios profissionais de última geração.',
-              price: '420',
               img: 'atacama-tour-2.jpg',
-              duration: '3h',
-              people: '10',
               tag: 'NOTURNO'
             },
             {
               title: 'Rota dos Salares (Piedras Rojas)',
               desc: 'Expedição de dia inteiro cruzando os pontos mais cênicos e remotos do impressionante Altiplano.',
-              price: '520',
               img: 'atacama-tour-3.jpg',
-              duration: 'Full Day',
-              people: '8',
               tag: 'ALTA ALTITUDE'
             }
           ].map((tour, idx) => (
@@ -107,10 +98,6 @@ export default function AtacamaPage() {
                 )}
               </div>
               <div className="p-8 flex flex-col flex-grow">
-                <div className="flex gap-5 mb-4 text-xs text-gray-500 font-medium">
-                  <span className="flex items-center gap-1.5"><span className="material-symbols-outlined text-[18px]">schedule</span> {tour.duration}</span>
-                  <span className="flex items-center gap-1.5"><span className="material-symbols-outlined text-[18px]">group</span> Máx. {tour.people}</span>
-                </div>
                 <h3 className="text-xl font-bold mb-3 text-retur-texto">{tour.title}</h3>
                 <p className="text-sm text-gray-500 mb-8 leading-relaxed">{tour.desc}</p>
               </div>
