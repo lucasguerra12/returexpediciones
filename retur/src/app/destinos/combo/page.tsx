@@ -1,6 +1,32 @@
+"use client";
+
 import Link from "next/link";
+import { useState } from "react";
 
 export default function ComboPage() {
+  // Estado para controlar qual aba de roteiro está ativa (7 ou 10 dias)
+  const [roteiroDias, setRoteiroDias] = useState<7 | 10>(7);
+
+  // Dados do Roteiro de 7 Dias
+  const roteiro7Dias = [
+    { day: "DIA 1", title: "San Pedro de Atacama", desc: "Chegada, recepção e briefing da expedição. Tarde livre para aclimatação no vilarejo.", icon: "flight_land", img: "atacama/atacama-amigos.jpg" },
+    { day: "DIA 2", title: "Lagunas Altiplânicas", desc: "Visita às lagoas Miscanti e Miñiques a 4.000m de altitude. Paisagens de tirar o fôlego.", icon: "water", img: "atacama/atacama-baltinache.jpeg" },
+    { day: "DIA 4", title: "Travessia para Uyuni", desc: "Cruzamento da fronteira Hito Cajón. Início da jornada boliviana em veículos 4x4.", icon: "directions_car", img: "uyuni/uyuni.jpg" },
+    { day: "DIA 7", title: "Salar de Uyuni", desc: "O grande espelho d'água, sessão de fotos com perspectiva e finalização da travessia.", icon: "landscape", img: "uyuni/uyuni-hotel.jpg" },
+  ];
+
+  // Dados do Roteiro de 10 Dias (Mais imersivo)
+  const roteiro10Dias = [
+    { day: "DIA 1", title: "Chegada & Aclimatação", desc: "Recepção em San Pedro. Pôr do sol clássico no Valle de la Luna e Vallecito.", icon: "flight_land", img: "atacama/atacama-valle-luna.jpg" },
+    { day: "DIA 3", title: "Geysers & Lagunas", desc: "Amanhecer nos Geysers del Tatio e flutuação nas Lagunas Escondidas de Baltinache.", icon: "water", img: "atacama/atacama-geysers-fumaca.jpg" },
+    { day: "DIA 6", title: "Fronteira Bolívia", desc: "Início da travessia 4x4 passando pela Reserva Eduardo Avaroa e suas lagoas coloridas.", icon: "directions_car", img: "uyuni/uyuni.jpg" },
+    { day: "DIA 9", title: "O Amanhecer no Salar", desc: "A imensidão do Salar de Uyuni ao nascer do sol e descanso no autêntico Hotel de Sal.", icon: "landscape", img: "uyuni/uyuni-hotel.jpg" },
+    { day: "DIA 10", title: "Retorno", desc: "Despedida do Altiplano boliviano e transfer seguro para o aeroporto ou retorno ao Chile.", icon: "flight_takeoff", img: "atacama/atacama-licancanbur-vulcao-hori.jpeg" },
+  ];
+
+  // Define qual array será renderizado com base no estado atual
+  const roteiroAtivo = roteiroDias === 7 ? roteiro7Dias : roteiro10Dias;
+
   return (
     <main className="flex min-h-screen flex-col font-manrope bg-[#F8F6F3] text-[#221a15]">
       
@@ -52,7 +78,7 @@ export default function ComboPage() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {[
             { icon: "landscape", title: "Melhor dos 2 Mundos", desc: "Contraste as montanhas vulcânicas do Atacama com a imensidão branca infinita do maior deserto de sal do planeta.", color: "text-[#D4773C]", bg: "bg-[#ffdbc9]/40" },
-            { icon: "savings", title: "Economia de Tempo e $", desc: "Logística integrada que otimiza deslocamentos, evitando gastos duplicados e conexões desnecessárias.", color: "text-[#2B7A9B]", bg: "bg-[#c0e8ff]/40" },
+            { icon: "savings", title: "Economia de Tempo", desc: "Logística integrada que otimiza deslocamentos, evitando gastos duplicados e conexões desnecessárias.", color: "text-[#2B7A9B]", bg: "bg-[#c0e8ff]/40" },
             { icon: "explore", title: "Travessia Épica", desc: "Cruze a fronteira terrestre entre Chile e Bolívia em veículos 4x4 equipados para o terreno mais desafiador da região.", color: "text-[#006576]", bg: "bg-[#aaedff]/40" },
           ].map((item, idx) => (
             <div key={idx} className="bg-white p-8 rounded-2xl shadow-[0_10px_30px_-10px_rgba(0,0,0,0.08)] border border-slate-100 transition-transform hover:-translate-y-2">
@@ -66,37 +92,58 @@ export default function ComboPage() {
         </div>
       </section>
 
-      {/* 3. ROTEIRO TÍPICO (Timeline Vertical) */}
-      <section id="roteiro" className="py-24 max-w-4xl mx-auto px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold mb-8">Roteiro Típico</h2>
-          <div className="inline-flex bg-white p-1.5 rounded-full shadow-[0_10px_30px_-10px_rgba(0,0,0,0.08)] border border-slate-100">
-            <button className="px-8 py-3 rounded-full bg-[#D4773C] text-white font-bold text-sm">7 Dias</button>
-            <button className="px-8 py-3 rounded-full text-[#55433a] font-bold text-sm hover:text-[#221a15]">10 Dias</button>
-          </div>
+      {/* 3. ROTEIRO TÍPICO (Timeline Vertical Dinâmica) */}
+      <section id="roteiro" className="relative py-24 px-8 overflow-hidden bg-white">
+        
+        {/* IMAGEM DE FUNDO (MAPA APAGADO) */}
+        <div className="absolute inset-0 z-0 opacity-5 pointer-events-none">
+          <img 
+            src="/images/mapa-fundo-roteiro.jpg" 
+            alt="Textura de Mapa" 
+            className="w-full h-full object-cover" 
+          />
         </div>
 
-        <div className="relative space-y-12 before:absolute before:inset-0 before:ml-5 md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-slate-200 before:to-transparent">
-          {[
-            { day: "DIA 1", title: "San Pedro de Atacama", desc: "Chegada, recepção e briefing da expedição. Tarde livre para aclimatação no vilarejo.", icon: "flight_land", img: "atacama-gal-1.jpg" },
-            { day: "DIA 2", title: "Lagunas Altiplânicas", desc: "Visita às lagoas Miscanti e Miñiques a 4.000m de altitude. Paisagens de tirar o fôlego.", icon: "water", img: "atacama-lagoas.jpg" },
-            { day: "DIA 4", title: "Travessia para Uyuni", desc: "Cruzamento da fronteira Hito Cajón. Início da jornada boliviana em veículos 4x4.", icon: "directions_car", img: "uyuni-tour-1.jpg" },
-          ].map((item, idx) => (
-            <div key={idx} className="relative flex flex-col md:flex-row items-center justify-between md:odd:flex-row-reverse group">
-              <div className="flex items-center justify-center w-12 h-12 rounded-full border-4 border-[#F8F6F3] bg-[#D4773C] text-white shadow-lg shrink-0 md:order-1 absolute left-[-6px] md:static z-10">
-                <span className="material-symbols-outlined text-sm">location_on</span>
-              </div>
-              <div className="w-[calc(100%-3rem)] ml-auto md:ml-0 md:w-[45%] p-6 rounded-2xl bg-white shadow-[0_10px_30px_-10px_rgba(0,0,0,0.08)] border border-slate-100">
-                <div className="flex items-center justify-between mb-4">
-                  <time className="font-inter font-bold text-xs uppercase tracking-widest text-[#D4773C]">{item.day}</time>
-                  <span className="material-symbols-outlined text-slate-400">{item.icon}</span>
-                </div>
-                <h4 className="text-xl font-bold mb-2">{item.title}</h4>
-                <p className="text-[#55433a] font-inter text-sm mb-6 leading-relaxed">{item.desc}</p>
-                <img className="w-full h-32 object-cover rounded-xl" src={`/images/${item.img}`} alt={item.title} />
-              </div>
+        {/* Todo o conteúdo precisa ficar acima do fundo (relative z-10) */}
+        <div className="max-w-4xl mx-auto relative z-10">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold mb-8 text-[#221a15]">Roteiro Típico</h2>
+            <div className="inline-flex bg-white p-1.5 rounded-full shadow-[0_10px_30px_-10px_rgba(0,0,0,0.08)] border border-slate-100">
+              <button 
+                onClick={() => setRoteiroDias(7)}
+                className={`px-8 py-3 rounded-full font-bold text-sm transition-all ${roteiroDias === 7 ? 'bg-[#D4773C] text-white shadow-md' : 'text-[#55433a] hover:text-[#221a15]'}`}
+              >
+                7 Dias
+              </button>
+              <button 
+                onClick={() => setRoteiroDias(10)}
+                className={`px-8 py-3 rounded-full font-bold text-sm transition-all ${roteiroDias === 10 ? 'bg-[#D4773C] text-white shadow-md' : 'text-[#55433a] hover:text-[#221a15]'}`}
+              >
+                10 Dias
+              </button>
             </div>
-          ))}
+          </div>
+
+          {/* Linha do tempo que se adapta ao estado */}
+          <div className="relative space-y-12 before:absolute before:inset-0 before:ml-5 md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-slate-200 before:to-transparent">
+            {roteiroAtivo.map((item, idx) => (
+              <div key={idx} className="relative flex flex-col md:flex-row items-center justify-between md:odd:flex-row-reverse group opacity-0 animate-fadeIn" style={{ animationDelay: `${idx * 0.1}s` }}>
+                <div className="flex items-center justify-center w-12 h-12 rounded-full border-4 border-[#F8F6F3] bg-[#D4773C] text-white shadow-lg shrink-0 md:order-1 absolute left-[-6px] md:static z-10 transition-transform group-hover:scale-110">
+                  <span className="material-symbols-outlined text-sm">{item.icon}</span>
+                </div>
+                <div className="w-[calc(100%-3rem)] ml-auto md:ml-0 md:w-[45%] p-6 rounded-2xl bg-white shadow-[0_10px_30px_-10px_rgba(0,0,0,0.08)] border border-slate-100 hover:border-[#D4773C]/30 transition-colors">
+                  <div className="flex items-center justify-between mb-4">
+                    <time className="font-inter font-bold text-xs uppercase tracking-widest text-[#D4773C]">{item.day}</time>
+                  </div>
+                  <h4 className="text-xl font-bold mb-2 text-[#221a15]">{item.title}</h4>
+                  <p className="text-[#55433a] font-inter text-sm mb-6 leading-relaxed">{item.desc}</p>
+                  <div className="h-32 overflow-hidden rounded-xl">
+                    <img className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" src={`/images/${item.img}`} alt={item.title} />
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -136,20 +183,21 @@ export default function ComboPage() {
             <div className="mt-12 grid grid-cols-2 gap-4">
               <div className="bg-white/60 backdrop-blur-sm p-5 rounded-2xl">
                 <p className="font-inter text-xs font-bold uppercase text-[#55433a] tracking-widest mb-1">Distância Total</p>
-                <p className="text-2xl font-bold text-[#221a15]">~1320 km</p>
+                <p className="text-2xl font-bold text-[#221a15]">~520 km</p>
               </div>
               <div className="bg-white/60 backdrop-blur-sm p-5 rounded-2xl">
                 <p className="font-inter text-xs font-bold uppercase text-[#55433a] tracking-widest mb-1">Duração do Trânsito</p>
-                <p className="text-2xl font-bold text-[#221a15]">20 Horas <span className="text-sm font-normal">(Off-road)</span></p>
+                <p className="text-2xl font-bold text-[#221a15]">4 Dias <span className="text-sm font-normal">(Off-road)</span></p>
               </div>
             </div>
           </div>
           <div className="h-[400px] lg:h-auto min-h-[500px]">
-            <img className="w-full h-full object-cover" src="/images/maps-mapa.png" alt="Mapa da Rota Atacama para Uyuni" />
+            <img className="w-full h-full object-cover" src="/images/mapa.png" alt="Mapa da Rota Atacama para Uyuni" />
           </div>
         </div>
       </section>
 
+      {/* 5. TRANSPARÊNCIA (O que inclui / não inclui) */}
       <section className="bg-white py-24">
         <div className="max-w-7xl mx-auto px-8">
           <h2 className="text-4xl font-bold text-center mb-16 text-[#221a15]">Transparência Total</h2>
@@ -185,7 +233,7 @@ export default function ComboPage() {
         </div>
       </section>
 
-      {/* 7. PREPARE-SE */}
+      {/* 6. PREPARE-SE */}
       <section className="py-24 max-w-7xl mx-auto px-8">
         <h2 className="text-4xl font-bold text-center mb-16 text-[#221a15]">Prepare-se para a Aventura</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -204,7 +252,7 @@ export default function ComboPage() {
         </div>
       </section>
 
-      {/* 8. CTA FINAL */}
+      {/* 7. CTA FINAL */}
       <section className="py-24 px-8">
         <div className="max-w-5xl mx-auto bg-[#D4773C] rounded-[48px] p-12 md:p-24 text-center text-white shadow-2xl relative overflow-hidden">
           <div className="relative z-10">
@@ -212,10 +260,15 @@ export default function ComboPage() {
             <p className="font-inter text-lg mb-12 opacity-90 max-w-2xl mx-auto">Nossos especialistas estão prontos para ajudar você a planejar a viagem da sua vida.</p>
             <div className="flex flex-col sm:flex-row justify-center gap-4">
               <a 
-            href="https://wa.me/5511999999999?text=Olá, gostaria de ajuda para montar meu roteiro no Atacama!"
-            target="_blank"
-            rel="noopener noreferrer">
-              <button className="bg-white text-[#D4773C] px-10 py-4 rounded-full font-bold text-lg hover:bg-slate-50 transition-colors shadow-lg">Solicitar Orçamento</button></a>
+                href="https://wa.me/5511999999999?text=Olá, gostaria de ajuda para montar meu roteiro Combo Atacama + Uyuni!"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <button className="bg-white text-[#D4773C] px-10 py-4 rounded-full font-bold text-lg hover:bg-slate-50 transition-colors shadow-lg flex items-center justify-center gap-2">
+                  <span className="material-symbols-outlined">chat</span>
+                  Solicitar Orçamento
+                </button>
+              </a>
             </div>
           </div>
         </div>

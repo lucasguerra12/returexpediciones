@@ -1,6 +1,9 @@
 import Link from "next/link";
+import { passeiosData } from "@/src/data/passeios";
 
 export default function UyuniPage() {
+  const numeroWhatsApp = "5517997697872";
+  const passeiosUyuni = passeiosData.uyuni;
   return (
     <main className="flex min-h-screen flex-col font-manrope bg-white">
       
@@ -60,67 +63,51 @@ export default function UyuniPage() {
       </section>
 
       {/* 4. PASSEIOS NO UYUNI */}
-      <section className="py-24 px-8 max-w-[1440px] mx-auto w-full">
-        <div className="mb-12">
-          <h2 className="text-4xl font-bold text-retur-texto mb-2">Passeios no Uyuni</h2>
-          <p className="text-gray-500">Explore o deserto de sal com segurança e conforto em veículos preparados.</p>
+      <section className="py-24 bg-[#F8F6F3] overflow-hidden">
+        <div className="px-8 max-w-[1440px] mx-auto w-full mb-12 flex flex-col md:flex-row justify-between items-end gap-6">
+          <div>
+            <h2 className="text-4xl font-bold text-[#221a15] mb-2">Passeios em Salar de Uyuni</h2>
+            <p className="font-inter text-[#55433a] text-lg">Deslize para ver todas as experiências disponíveis neste destino.</p>
+          </div>
+          <div className="flex gap-2">
+             <span className="material-symbols-outlined text-slate-400">swipe_left</span>
+             <span className="font-inter text-sm font-bold text-slate-400 uppercase tracking-widest">Deslize</span>
+             <span className="material-symbols-outlined text-slate-400">swipe_right</span>
+          </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {[
-            {
-              title: 'Travessia Clássica (Salar)',
-              desc: 'Três dias de jornada cruzando o deserto de sal e as lagoas altiplânicas da Reserva Nacional.',
-              price: '1.850',
-              img: 'uyuni-tour-1.jpg',
-              duration: '3 Dias',
-              people: '6',
-              tag: 'MAIS POPULAR'
-            },
-            {
-              title: 'Expedição Premium Uyuni',
-              desc: 'Conforto absoluto em veículos privados e hospedagem exclusiva nos hotéis de sal.',
-              price: '2.400',
-              img: 'uyuni-tour-2.jpg',
-              duration: '4 Dias',
-              people: '4',
-              tag: 'NOBRE'
-            },
-            {
-              title: 'Tour de 1 Dia (Salar)',
-              desc: 'Focado no Salar e na Ilha Incahuasi, ideal para quem tem pouco tempo mas quer fotos icônicas.',
-              price: '1.250',
-              img: 'uyuni-tour-3.jpg',
-              duration: '10 Horas',
-              people: '6',
-              tag: 'DAY TOUR'
-            }
-          ].map((tour, idx) => (
-            <div key={idx} className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all border border-gray-100 flex flex-col group cursor-pointer">
-              <div className="relative h-64 overflow-hidden">
-                <img src={`/images/${tour.img}`} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" alt={tour.title} />
-                {tour.tag && (
-                  <span className="absolute top-4 left-4 bg-white/95 backdrop-blur text-retur-texto text-[10px] font-bold px-3 py-1.5 rounded-full uppercase tracking-widest shadow-sm">
-                    {tour.tag}
-                  </span>
-                )}
+        {/* Container do Carrossel */}
+        <div className="flex overflow-x-auto gap-6 px-8 pb-12 snap-x snap-mandatory [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
+          {/* Espaçamento inicial para alinhar com o container */}
+          <div className="min-w-[calc((100vw-1440px)/2)] hidden xl:block shrink-0"></div>
+          
+          {passeiosUyuni.map((tour) => (
+            <div key={tour.id} className="min-w-[320px] md:min-w-[400px] bg-white rounded-3xl overflow-hidden shadow-[0_10px_30px_-10px_rgba(0,0,0,0.06)] border border-slate-50 flex flex-col group snap-start shrink-0">
+              <div className="relative h-56 overflow-hidden">
+                <img src={`/images/uyuni/${tour.imagem}`} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" alt={tour.titulo} />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
               </div>
               <div className="p-8 flex flex-col flex-grow">
-                <div className="flex gap-5 mb-4 text-xs text-gray-500 font-medium">
-                  <span className="flex items-center gap-1.5"><span className="material-symbols-outlined text-[18px]">schedule</span> {tour.duration}</span>
-                  <span className="flex items-center gap-1.5"><span className="material-symbols-outlined text-[18px]">group</span> Máx. {tour.people}</span>
-                </div>
-                <h3 className="text-xl font-bold mb-3 text-retur-texto">{tour.title}</h3>
-                <p className="text-sm text-gray-500 mb-8 leading-relaxed">{tour.desc}</p>
+                <h3 className="text-2xl font-bold mb-3 text-[#221a15] leading-tight">{tour.titulo}</h3>
+                <p className="font-inter text-sm text-[#55433a] mb-8 leading-relaxed flex-grow">{tour.resumo}</p>
                 
-                <div className="mt-auto flex justify-between items-end border-t border-gray-100 pt-6">
-                  <span className="text-retur-terra font-bold text-xs uppercase tracking-widest flex items-center gap-1 group-hover:gap-2 transition-all">
-                    Explorar <span className="material-symbols-outlined text-sm">arrow_forward</span>
-                  </span>
+                <div className="mt-auto border-t border-slate-100 pt-6">
+                  <a 
+                    href={`https://wa.me/${numeroWhatsApp}?text=Olá! Gostaria de orçar e saber mais sobre o passeio: *${tour.titulo}* no Atacama.`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-full bg-[#F8F6F3] text-[#D4773C] py-4 rounded-xl font-bold hover:bg-[#D4773C] hover:text-white transition-colors flex items-center justify-center gap-2 group/btn border border-[#f0dfd7]"
+                  >
+                    <span className="material-symbols-outlined text-lg">chat</span>
+                    Solicitar Orçamento
+                  </a>
                 </div>
               </div>
             </div>
           ))}
+
+          {/* Espaçamento final para o último item não colar na tela */}
+          <div className="min-w-[8px] shrink-0"></div>
         </div>
       </section>
 
