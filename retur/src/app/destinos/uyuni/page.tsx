@@ -114,10 +114,6 @@ export default function UyuniPage() {
                 <p className="text-sm text-gray-500 mb-8 leading-relaxed">{tour.desc}</p>
                 
                 <div className="mt-auto flex justify-between items-end border-t border-gray-100 pt-6">
-                  <div>
-                    <span className="text-[10px] text-gray-400 uppercase tracking-widest block mb-1">A partir de</span>
-                    <span className="text-2xl font-bold text-retur-terra font-inter">R$ {tour.price}</span>
-                  </div>
                   <span className="text-retur-terra font-bold text-xs uppercase tracking-widest flex items-center gap-1 group-hover:gap-2 transition-all">
                     Explorar <span className="material-symbols-outlined text-sm">arrow_forward</span>
                   </span>

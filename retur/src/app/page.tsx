@@ -29,9 +29,13 @@ export default function Home() {
             >
               Conhecer Destinos
             </Link>
+             <a 
+            href="https://wa.me/5511999999999?text=Olá, gostaria de ajuda para montar meu roteiro no Atacama!"
+            target="_blank"
+            rel="noopener noreferrer">
             <button className="bg-white/10 hover:bg-white/20 backdrop-blur-md border border-white/40 text-white px-10 py-4 rounded-md font-semibold transition-all">
               Solicitar Orçamento
-            </button>
+            </button></a>
           </div>
         </div>
       </section>

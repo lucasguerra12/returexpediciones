@@ -136,16 +136,16 @@ export default function ComboPage() {
             <div className="mt-12 grid grid-cols-2 gap-4">
               <div className="bg-white/60 backdrop-blur-sm p-5 rounded-2xl">
                 <p className="font-inter text-xs font-bold uppercase text-[#55433a] tracking-widest mb-1">Distância Total</p>
-                <p className="text-2xl font-bold text-[#221a15]">~520 km</p>
+                <p className="text-2xl font-bold text-[#221a15]">~1320 km</p>
               </div>
               <div className="bg-white/60 backdrop-blur-sm p-5 rounded-2xl">
                 <p className="font-inter text-xs font-bold uppercase text-[#55433a] tracking-widest mb-1">Duração do Trânsito</p>
-                <p className="text-2xl font-bold text-[#221a15]">4 Dias <span className="text-sm font-normal">(Off-road)</span></p>
+                <p className="text-2xl font-bold text-[#221a15]">20 Horas <span className="text-sm font-normal">(Off-road)</span></p>
               </div>
             </div>
           </div>
           <div className="h-[400px] lg:h-auto min-h-[500px]">
-            <img className="w-full h-full object-cover" src="/images/combo-mapa.png" alt="Mapa da Rota Atacama para Uyuni" />
+            <img className="w-full h-full object-cover" src="/images/maps-mapa.png" alt="Mapa da Rota Atacama para Uyuni" />
           </div>
         </div>
       </section>
@@ -211,10 +211,11 @@ export default function ComboPage() {
             <h2 className="font-bold text-4xl md:text-5xl mb-6 leading-tight">Pronto para a Aventura Completa?</h2>
             <p className="font-inter text-lg mb-12 opacity-90 max-w-2xl mx-auto">Nossos especialistas estão prontos para ajudar você a planejar a viagem da sua vida.</p>
             <div className="flex flex-col sm:flex-row justify-center gap-4">
-              <button className="bg-white text-[#D4773C] px-10 py-4 rounded-full font-bold text-lg hover:bg-slate-50 transition-colors shadow-lg">Solicitar Orçamento</button>
-              <button className="bg-[#25D366] text-white px-10 py-4 rounded-full font-bold text-lg hover:bg-[#128C7E] transition-colors shadow-lg flex items-center justify-center gap-2">
-                <span className="material-symbols-outlined">chat</span> WhatsApp
-              </button>
+              <a 
+            href="https://wa.me/5511999999999?text=Olá, gostaria de ajuda para montar meu roteiro no Atacama!"
+            target="_blank"
+            rel="noopener noreferrer">
+              <button className="bg-white text-[#D4773C] px-10 py-4 rounded-full font-bold text-lg hover:bg-slate-50 transition-colors shadow-lg">Solicitar Orçamento</button></a>
             </div>
           </div>
         </div>

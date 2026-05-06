@@ -80,10 +80,6 @@ export default function SantiagoPage() {
                 </div>
                 <h3 className="text-xl font-bold mb-3 text-retur-texto">{tour.title}</h3>
                 <div className="mt-auto flex justify-between items-end border-t border-gray-100 pt-6">
-                  <div>
-                    <span className="text-[10px] text-gray-400 uppercase tracking-widest block mb-1">A partir de</span>
-                    <span className="text-2xl font-bold text-retur-terra font-inter">R$ {tour.price}</span>
-                  </div>
                   <span className="text-retur-terra font-bold text-xs uppercase tracking-widest flex items-center gap-1">Explorar →</span>
                 </div>
               </div>

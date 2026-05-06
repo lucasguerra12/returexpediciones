@@ -14,7 +14,8 @@ export function Header() {
         {/* Dropdown de Destinos */}
         <div className="group relative py-2">
           <button className="flex items-center gap-1 hover:text-retur-terra transition-colors uppercase tracking-widest">
-            Destinos <span className="material-symbols-outlined text-sm">expand_more</span>
+            <link href="/destinos" />
+            Destinos<span className="material-symbols-outlined text-sm">expand_more</span>
           </button>
           <div className="absolute top-full left-0 w-64 bg-white shadow-2xl rounded-2xl py-4 border border-gray-50 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all transform translate-y-2 group-hover:translate-y-0">
             <Link href="/destinos/atacama" className="block px-6 py-3 hover:bg-retur-areia hover:text-retur-terra transition-colors border-l-4 border-transparent hover:border-retur-terra">Atacama</Link>
