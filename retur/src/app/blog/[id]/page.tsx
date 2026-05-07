@@ -10,7 +10,7 @@ export default function ArtigoBlogPage() {
         <div className="absolute inset-0 z-0">
           <Image 
             className="object-cover" 
-            src="/images/uyuni-hero.jpg" 
+            src="/images/uyuni/uyuni-hero.jpg" 
             alt="Cenário do Salar de Uyuni" 
             fill
             priority
@@ -53,7 +53,7 @@ export default function ArtigoBlogPage() {
 
           <div className="my-16 -mx-8 md:-mx-0 rounded-3xl overflow-hidden shadow-lg relative h-[400px] md:h-[500px]">
             <Image 
-              src="/images/uyuni-tour-1.jpg" 
+              src="/images/uyuni/uyuni-tour-1.jpg" 
               alt="Reflexo no Salar de Uyuni" 
               fill
               className="object-cover"

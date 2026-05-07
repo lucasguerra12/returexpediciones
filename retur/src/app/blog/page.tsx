@@ -12,7 +12,7 @@ export default function BlogPage() {
       resumo: "Caminhe por formações rochosas e dunas de areia que imitam a superfície lunar. Saiba o que esperar desse cenário mágico ao entardecer.",
       data: "15 Mai 2024",
       tempo: "4 min de leitura",
-      imagem: "atacama-v-luna.jpg",
+      imagem: "atacama/atacama-v-luna.jpg",
       tags: ["#Atacama", "#PôrDoSol"]
     },
     {
@@ -21,7 +21,7 @@ export default function BlogPage() {
       resumo: "Entenda por que as fumarolas de vapor a mais de 4.300m de altitude exigem que o passeio comece antes do amanhecer.",
       data: "10 Mai 2024",
       tempo: "5 min de leitura",
-      imagem: "atacama-geyser.jpg",
+      imagem: "atacama/atacama-geyser.jpg",
       tags: ["#Atacama", "#Geysers"]
     },
     {
@@ -30,7 +30,7 @@ export default function BlogPage() {
       resumo: "Tudo o que você precisa saber sobre as estações de esqui e os parques de neve mais cobiçados da Cordilheira dos Andes.",
       data: "05 Mai 2024",
       tempo: "6 min de leitura",
-      imagem: "santiago-neve.jpg",
+      imagem: "santiago/santiago-neve.jpg",
       tags: ["#Santiago", "#Neve"]
     },
     {
@@ -39,7 +39,7 @@ export default function BlogPage() {
       resumo: "Longe das multidões, um conjunto de lagoas de um azul vibrante cercadas de sal branco onde é impossível afundar.",
       data: "28 Abr 2024",
       tempo: "4 min de leitura",
-      imagem: "atacama-baltinache.jpg",
+      imagem: "atacama/atacama-baltinache.jpg",
       tags: ["#Atacama", "#Lagoas"]
     },
     {
@@ -48,7 +48,7 @@ export default function BlogPage() {
       resumo: "Aprenda sobre a cosmovisão andina e observe planetas e constelações pelos telescópios no céu mais limpo da Terra.",
       data: "22 Abr 2024",
       tempo: "5 min de leitura",
-      imagem: "atacama-astros.jpg",
+      imagem: "atacama/atacama-astros.jpg",
       tags: ["#Atacama", "#Estrelas"]
     },
     {
@@ -57,7 +57,7 @@ export default function BlogPage() {
       resumo: "Camas, mesas e paredes feitas de blocos de sal puros. Conheça o conforto surreal das hospedagens da travessia boliviana.",
       data: "15 Abr 2024",
       tempo: "4 min de leitura",
-      imagem: "uyuni-hotel.jpg",
+      imagem: "uyuni/uyuni-hotel.jpg",
       tags: ["#Uyuni", "#Hospedagem"]
     },
     {
@@ -66,7 +66,7 @@ export default function BlogPage() {
       resumo: "Descubra os sabores do Chile visitando as vinhas tradicionais e entendendo o processo de produção dos melhores vinhos da região.",
       data: "10 Abr 2024",
       tempo: "5 min de leitura",
-      imagem: "santiago-tour-vinho.jpg",
+      imagem: "santiago/santiago-tour-vinho.jpg",
       tags: ["#Santiago", "#Vinhos"]
     },
     {
@@ -75,7 +75,7 @@ export default function BlogPage() {
       resumo: "Dicas de aclimatação e preparo físico para quem deseja encarar as fumarolas na cratera deste gigante andino.",
       data: "05 Abr 2024",
       tempo: "7 min de leitura",
-      imagem: "atacama-lascar.jpg",
+      imagem: "atacama/atacama-lascar.jpg",
       tags: ["#Atacama", "#Vulcão"]
     }
   ];
@@ -99,7 +99,7 @@ export default function BlogPage() {
       {/* 1. HERO SECTION */}
       <section className="relative h-[460px] flex items-center justify-center overflow-hidden pt-20 bg-slate-900">
         <div className="absolute inset-0 z-0 opacity-60">
-          <Image className="object-cover" src="/images/atacama-hero.jpg" alt="Deserto do Atacama" fill priority />
+          <Image className="object-cover" src="/images/atacama/atacama-hero.jpg" alt="Deserto do Atacama" fill priority />
           <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-black/30"></div>
         </div>
         
@@ -122,7 +122,7 @@ export default function BlogPage() {
         <div className="mb-20">
           <Link href="/blog/hotel-de-sal-uyuni" className="bg-white rounded-3xl overflow-hidden flex flex-col md:flex-row shadow-[0_10px_30px_-10px_rgba(0,0,0,0.08)] group transition-transform duration-300 hover:-translate-y-2 border border-slate-50 cursor-pointer">
             <div className="md:w-1/2 h-80 md:h-auto relative overflow-hidden">
-              <Image src="/images/uyuni-hero.jpg" alt="Salar de Uyuni Espelho" fill className="object-cover group-hover:scale-105 transition-transform duration-700" />
+              <Image src="/images/uyuni/uyuni-hero.jpg" alt="Salar de Uyuni Espelho" fill className="object-cover group-hover:scale-105 transition-transform duration-700" />
               <div className="absolute top-6 left-6 flex gap-2">
                 <span className="bg-[#D4773C] text-white font-inter font-bold text-[10px] px-4 py-1.5 rounded-full uppercase tracking-widest shadow-md">DESTAQUE</span>
               </div>
@@ -157,7 +157,7 @@ export default function BlogPage() {
               {postsAtuais.map((post) => (
                 <Link href={`/blog/${post.id}`} key={post.id} className="bg-white rounded-3xl overflow-hidden shadow-[0_10px_30px_-10px_rgba(0,0,0,0.06)] group border border-slate-50 cursor-pointer flex flex-col hover:-translate-y-2 transition-transform duration-300">
                   <div className="aspect-[4/3] relative overflow-hidden">
-                    <Image src={`/images/${post.imagem}`} alt={post.titulo} fill className="object-cover group-hover:scale-105 transition-transform duration-700" />
+                    <Image src={`/images/atacama/${post.imagem}`} alt={post.titulo} fill className="object-cover group-hover:scale-105 transition-transform duration-700" />
                   </div>
                   <div className="p-8 flex flex-col flex-grow">
                     <div className="flex gap-2 mb-4">
@@ -233,7 +233,7 @@ export default function BlogPage() {
                 </div>
               </div>
               <div className="grid grid-cols-2 gap-3">
-                <div className="aspect-square relative rounded-xl overflow-hidden"><Image src="/images/atacama-v-luna.jpg" alt="Atacama" fill className="object-cover group-hover:scale-105 transition-transform duration-500" /></div>
+                <div className="aspect-square relative rounded-xl overflow-hidden"><Image src="/images/atacama/atacama-v-luna.jpg" alt="Atacama" fill className="object-cover group-hover:scale-105 transition-transform duration-500" /></div>
                 <div className="aspect-square relative rounded-xl overflow-hidden"><Image src="/images/uyuni-hero.jpg" alt="Uyuni" fill className="object-cover group-hover:scale-105 transition-transform duration-500" /></div>
               </div>
             </a>

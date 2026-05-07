@@ -150,7 +150,7 @@ export default function SobreNosPage() {
           
           <div className="relative h-[600px] rounded-3xl overflow-hidden shadow-2xl">
             <Image 
-              src="/images/uyuni/uyuni-aventureiro.jpeg" 
+              src="/images/uyuni/uyuni-aventureiro-1.jpeg" 
               alt="Diferenciais Retur" 
               fill
               className="object-cover" 

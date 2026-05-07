@@ -6,14 +6,14 @@ export const passeiosData = {
       { id: "tour-vinicola", titulo: "Tour Vinícola", resumo: "Visita às vinhas com passeio pelos barris e degustação de vinhos chilenos.", imagem: "vinhos.jpg" }
     ],
     atacama: [
-      { id: "valle-luna", titulo: "Valle de la Luna", resumo: "Formações rochosas, dunas imponentes e um pôr do sol inesquecível.", imagem: "atacama-luna.jpeg" },
+      { id: "valle-luna", titulo: "Valle de la Luna", resumo: "Formações rochosas, dunas imponentes e um pôr do sol inesquecível.", imagem: "atacama-luna-1.jpeg" },
       { id: "vallecito", titulo: "Vallecito", resumo: "O famoso ônibus abandonado em um cenário que lembra a superfície lunar.", imagem: "atacama-valle.jpg" },
       { id: "geysers-tatio", titulo: "Geysers del Tatio", resumo: "Fumarolas de vapor e águas termais no amanhecer mais frio e belo do deserto.", imagem: "atacama-geysers-fumaca.jpg" },
       { id: "baltinache", titulo: "Lagunas de Baltinache", resumo: "Lagoas de um azul turquesa vibrante cercadas por uma vasta planície de sal branco.", imagem: "atacama-baltinache.jpeg" },
       { id: "laguna-cejar", titulo: "Laguna Cejar", resumo: "Experimente a sensação de flutuar sem esforço em águas com altíssima concentração de sal.", imagem: "cejar.jpeg" },
       { id: "termas-puritama", titulo: "Termas de Puritama", resumo: "Piscinas naturais de águas termais quentes escondidas no fundo de um desfiladeiro.", imagem: "atacama-termaspuritama.jpeg" },
       { id: "valle-arcoiris", titulo: "Valle del Arco-íris", resumo: "Montanhas coloridas com faixas impressionantes de verde, vermelho e branco.", imagem: "arcoiris.jpg" },
-      { id: "piedras-rojas", titulo: "Piedras Rojas", resumo: "Contraste perfeito entre pedras vermelhas, um lago verde-água e montanhas ao fundo.", imagem: "piedras.jpeg" },
+      { id: "piedras-rojas", titulo: "Piedras Rojas", resumo: "Contraste perfeito entre pedras vermelhas, um lago verde-água e montanhas ao fundo.", imagem: "piedras-1.jpeg" },
       { id: "ruta-salares", titulo: "Ruta de los Salares", resumo: "Estradas cênicas no deserto com observação de lhamas, vicunhas e flamingos.", imagem: "atacama-ruta-hori.jpg" },
       { id: "tour-astronomico", titulo: "Tour Astronômico", resumo: "Observação da Via Láctea e constelações com telescópios sob um céu estrelado impecável.", imagem: "noite.jpeg" },
       { id: "cerro-toco", titulo: "Vulcão Cerro Toco", resumo: "Trekking de alta montanha com uma vista panorâmica espetacular do deserto.", imagem: "cerro.jpg" },
@@ -26,6 +26,6 @@ export const passeiosData = {
     ],
     uyuni: [
       { id: "expedicao-uyuni", titulo: "Expedição Uyuni", resumo: "A travessia clássica pelo deserto de sal, brincando com ilusões de ótica e o espelho d'água.", imagem: "uyuni-hero.jpg" },
-      { id: "hotel-de-sal", titulo: "Uyuni (Hotel de Sal)", resumo: "A experiência única de dormir em um hotel com interiores e camas feitos inteiramente de blocos de sal.", imagem: "uyuni-desertodesal.jpeg" }
+      { id: "hotel-de-sal", titulo: "Uyuni (Hotel de Sal)", resumo: "A experiência única de dormir em um hotel com interiores e camas feitos inteiramente de blocos de sal.", imagem: "uyuni-desertodesal-1.jpeg" }
     ]
   };

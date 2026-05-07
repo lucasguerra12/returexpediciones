@@ -54,7 +54,7 @@ export default function UyuniPage() {
 
         <div className="grid grid-cols-2 gap-4 h-[600px]">
           <div className="relative rounded-2xl overflow-hidden h-full shadow-lg">
-            <Image src="/images/uyuni/uyuni-desertodesal.jpeg" fill className="object-cover" alt="Salar de Uyuni" />
+            <Image src="/images/uyuni/uyuni-desertodesal-1.jpeg" fill className="object-cover" alt="Salar de Uyuni" />
           </div>
           <div className="grid grid-rows-2 gap-4 h-full">
             <div className="relative rounded-2xl overflow-hidden shadow-lg">
