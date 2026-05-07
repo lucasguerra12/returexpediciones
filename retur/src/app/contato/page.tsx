@@ -238,9 +238,9 @@ ${mensagem}`;
         <div className="space-y-4">
           {[
             { q: 'Qual o tempo médio de resposta?', a: 'Pelo WhatsApp, costumamos responder em menos de 15 minutos. Por e-mail, garantimos um retorno em até 24 horas úteis.' },
-            { q: 'Como recebo um orçamento personalizado?', a: 'Basta preencher o formulário acima selecionando "Solicitar orçamento". Nossa equipe entrará em contato para entender seu perfil e montar o roteiro ideal.' },
+            { q: 'Como recebo um pacote personalizado?', a: 'Basta preencher o formulário acima selecionando "Solicitar orçamento". Nossa equipe entrará em contato para entender seu perfil e montar o roteiro ideal.' },
             { q: 'Posso pagar em Reais (BRL)?', a: 'Sim! Facilitamos o pagamento para brasileiros através de PIX ou transferência nacional, evitando taxas de IOF de cartões internacionais.' },
-            { q: 'Quais as formas de pagamento aceitas?', a: 'Aceitamos PIX, Cartão de Crédito (Parcelado), Transferência Bancária e pagamento em espécie (CLP ou USD) diretamente em nossa agência.' },
+            { q: 'Quais as formas de pagamento aceitas?', a: 'Aceitamos PIX, Cartão de Crédito (Parcelamos em até 12x), Transferência Bancária e por Pesos CLP via Wise' },
             { q: 'Qual a política de cancelamento?', a: 'Oferecemos cancelamento flexível. Roteiros mais longos como a travessia do Uyuni possuem regras específicas detalhadas no contrato no momento da reserva.' },
           ].map((faq, i) => (
             <details key={i} className="group bg-white rounded-2xl shadow-[0_4px_20px_rgba(0,0,0,0.03)] overflow-hidden border border-slate-100">
