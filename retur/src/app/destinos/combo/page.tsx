@@ -13,12 +13,12 @@ export default function ComboPage() {
     { day: "DIA 1", title: "San Pedro de Atacama", desc: "Chegada, recepção e briefing da expedição. Tarde livre para aclimatação no vilarejo.", icon: "flight_land", img: "atacama/atacama-amigos.jpg" },
     { day: "DIA 2", title: "Lagunas Altiplânicas", desc: "Visita às lagoas Miscanti e Miñiques a 4.000m de altitude. Paisagens de tirar o fôlego.", icon: "water", img: "atacama/atacama-baltinache.jpeg" },
     { day: "DIA 4", title: "Travessia para Uyuni", desc: "Cruzamento da fronteira Hito Cajón. Início da jornada boliviana em veículos 4x4.", icon: "directions_car", img: "uyuni/uyuni.jpg" },
-    { day: "DIA 7", title: "Salar de Uyuni", desc: "O grande espelho d'água, sessão de fotos com perspectiva e finalização da travessia.", icon: "landscape", img: "uyuni/uyuni-hotel.jpg" },
+    { day: "DIA 7", title: "Salar de Uyuni", desc: "O grande espelho d'água, sessão de fotos com perspectiva e finalização da travessia.", icon: "landscape", img: "uyuni/uyuni-1.jpg" },
   ];
 
   // Dados do Roteiro de 10 Dias (Mais imersivo)
   const roteiro10Dias = [
-    { day: "DIA 1", title: "Chegada & Aclimatação", desc: "Recepção em San Pedro. Pôr do sol clássico no Valle de la Luna e Vallecito.", icon: "flight_land", img: "atacama/atacama-valle-luna.jpg" },
+    { day: "DIA 1", title: "Chegada & Aclimatação", desc: "Recepção em San Pedro. Pôr do sol clássico no Valle de la Luna e Vallecito.", icon: "flight_land", img: "atacama/atacama-valle.jpg" },
     { day: "DIA 3", title: "Geysers & Lagunas", desc: "Amanhecer nos Geysers del Tatio e flutuação nas Lagunas Escondidas de Baltinache.", icon: "water", img: "atacama/atacama-geysers-fumaca.jpg" },
     { day: "DIA 6", title: "Fronteira Bolívia", desc: "Início da travessia 4x4 passando pela Reserva Eduardo Avaroa e suas lagoas coloridas.", icon: "directions_car", img: "uyuni/uyuni.jpg" },
     { day: "DIA 9", title: "O Amanhecer no Salar", desc: "A imensidão do Salar de Uyuni ao nascer do sol e descanso no autêntico Hotel de Sal.", icon: "landscape", img: "uyuni/uyuni-hotel.jpg" },
