@@ -142,7 +142,12 @@ export default function UyuniPage() {
         <div className="max-w-3xl mx-auto">
           <h2 className="text-4xl md:text-5xl font-bold mb-6">Pronto para a imensidão?</h2>
           <p className="text-lg mb-12 opacity-90 leading-relaxed">Nossos especialistas estão prontos para desenhar a sua jornada personalizada pelo Salar de Uyuni e arredores.</p>
-          <a href="#" className="bg-white text-retur-terra px-10 py-5 rounded-xl font-bold text-lg hover:shadow-2xl transition-all inline-flex items-center gap-3">
+          <a 
+            href={`https://wa.me/${numeroWhatsApp}?text=Olá! Quero montar meu roteiro personalizado para o Salar de Uyuni.`}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bg-white text-retur-terra px-10 py-5 rounded-xl font-bold text-lg hover:shadow-2xl transition-all inline-flex items-center gap-3"
+          >
             Montar meu Roteiro no Uyuni
           </a>
         </div>

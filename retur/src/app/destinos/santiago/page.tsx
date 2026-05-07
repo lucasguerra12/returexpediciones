@@ -119,7 +119,14 @@ export default function SantiagoPage() {
       <section className="py-24 bg-retur-terra text-white text-center px-8">
         <h2 className="text-4xl font-bold mb-6">Monte seu Roteiro em Santiago</h2>
         <p className="mb-10 opacity-90 max-w-xl mx-auto">Vinhos, montanhas ou cultura urbana? Deixe nossa equipe planejar a estadia perfeita para você na capital chilena.</p>
-        <button className="bg-white text-retur-terra px-12 py-4 rounded-xl font-bold text-lg hover:shadow-2xl transition-all">Solicitar Orçamento</button>
+        <a 
+          href={`https://wa.me/${numeroWhatsApp}?text=Olá! Gostaria de planejar meu roteiro em Santiago com a Retur.`}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="bg-white text-retur-terra px-12 py-4 rounded-xl font-bold text-lg hover:shadow-2xl transition-all inline-block"
+        >
+          Solicitar Orçamento
+        </a>
       </section>
 
     </main>
