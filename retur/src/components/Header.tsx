@@ -50,7 +50,7 @@ export function Header() {
             </div>
 
             <Link href="/sobre" className="hover:text-retur-terra transition-colors">Sobre Nós</Link>
-            <Link href="/blog" className="hover:text-retur-terra transition-colors">Blog</Link>
+            {/*<Link href="/blog" className="hover:text-retur-terra transition-colors">Blog</Link> */}
             <Link href="/contato" className="hover:text-retur-terra transition-colors">Contato</Link>
           </nav>
         </div>
