@@ -65,7 +65,7 @@ export default function ComboPage() {
             </div>
             <div className="flex flex-col sm:flex-row gap-5 justify-center">
              <a 
-            href="https://wa.me/5511999999999?text=Olá, gostaria de ajuda para montar meu roteiro no Atacama!"
+            href="https://wa.me/5517997697872?text=Olá, gostaria de ajuda para montar meu roteiro no Atacama!"
             target="_blank"
             rel="noopener noreferrer">
             <button className="bg-[#D4773C] text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-[#c95e1a] transition-colors shadow-lg flex items-center justify-center gap-2">
@@ -211,7 +211,7 @@ export default function ComboPage() {
             <p className="font-inter text-lg mb-12 opacity-90 max-w-2xl mx-auto">Nossos especialistas estão prontos para ajudar você a planejar a viagem da sua vida.</p>
             <div className="flex flex-col sm:flex-row justify-center gap-4">
               <a 
-                href="https://wa.me/5511999999999?text=Olá, gostaria de ajuda para montar meu roteiro Combo Atacama + Uyuni!"
+                href="https://wa.me/5517997697872?text=Olá, gostaria de ajuda para montar meu roteiro Combo Atacama + Uyuni!"
                 target="_blank"
                 rel="noopener noreferrer"
               >

@@ -177,7 +177,7 @@ export default function Destinos() {
         <h2 className="text-4xl font-bold mb-6">Monte seu Roteiro Sob Medida</h2>
         <p className="mb-10 opacity-90 max-w-xl mx-auto">Fale com um especialista para criar uma viagem que combine perfeitamente com seu tempo e estilo.</p>
         <a 
-          href="https://wa.me/5511999999999?text=Olá, quero planejar minha viagem sob medida!"
+          href="https://wa.me/5517997697872?text=Olá, quero planejar minha viagem sob medida!"
           target="_blank"
           rel="noopener noreferrer"
           className="bg-white text-retur-terra px-12 py-4 rounded-xl font-bold text-lg hover:shadow-2xl transition-all inline-flex items-center gap-3 mx-auto"

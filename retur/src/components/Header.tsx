@@ -43,7 +43,7 @@ export function Header() {
 
       <div className="flex items-center gap-4">
         <a 
-          href="https://wa.me/5511999999999?text=Olá, gostaria de ajuda para montar meu roteiro no Atacama!"
+          href="https://wa.me/5517997697872?text=Olá, gostaria de ajuda para montar meu roteiro no Atacama!"
           target="_blank"
           rel="noopener noreferrer"
           className="hidden sm:block"
