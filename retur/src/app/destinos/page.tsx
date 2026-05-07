@@ -20,7 +20,7 @@ export default function Destinos() {
       title: "Salar de Uyuni",
       location: "Potosí, Bolívia",
       description: "O maior deserto de sal do mundo, um horizonte infinito que se transforma em um espelho perfeito durante o verão.",
-      image: "/images/uyuni/uyuni-aventureiro.JPEG",
+      image: "/images/uyuni/uyuni-aventureiro.jpeg",
       altitude: "3.650m",
       epoca: "Jan - Abr",
       temp: "-10°C a 15°C",
