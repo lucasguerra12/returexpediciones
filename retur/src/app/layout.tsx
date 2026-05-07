@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Script from 'next/script';
+import { CookieBanner } from '../components/CookieBanner';
 
 // Importações nomeadas corretas, exatamente como nos seus arquivos de componentes
 import { Header } from "../components/Header";
@@ -53,6 +54,7 @@ export default function RootLayout({
         <Header />
         {children}
         <Footer />
+        <CookieBanner />
       </body>
     </html>
   );
