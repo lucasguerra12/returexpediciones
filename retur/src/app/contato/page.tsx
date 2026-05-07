@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useState } from "react";
 
 export default function ContatoPage() {
@@ -46,10 +47,12 @@ ${mensagem}`;
       {/* 1. HERO SECTION */}
       <section className="relative h-[400px] min-h-[350px] flex items-center justify-center overflow-hidden pt-20">
         <div className="absolute inset-0 z-0">
-          <img 
-            className="w-full h-full object-cover" 
+          <Image 
+            className="object-cover" 
             src="/images/atacama/atacama-ruta-hori.jpg" 
             alt="Atendimento Retur" 
+            fill
+            priority
           />
           <div className="absolute inset-0 bg-black/50"></div>
         </div>
@@ -126,7 +129,6 @@ ${mensagem}`;
           {/* ESQUERDA: FORMULÁRIO */}
           <div>
             <h2 className="text-4xl font-bold mb-8 text-[#221a15]">Envie sua Mensagem</h2>
-            {/* O onSubmit aciona a nossa função de WhatsApp[cite: 16] */}
             <form onSubmit={handleWhatsAppSubmit} className="space-y-6">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div className="space-y-2">
@@ -180,7 +182,7 @@ ${mensagem}`;
             </form>
           </div>
 
-          {/* DIREITA: ADDITIONAL INFO[cite: 16] */}
+          {/* DIREITA: ADDITIONAL INFO */}
           <div className="space-y-8">
             
             {/* Location */}
@@ -198,12 +200,12 @@ ${mensagem}`;
               </div>
               {/* Maps Placeholder */}
               <div className="w-full h-56 bg-slate-200 rounded-2xl overflow-hidden relative group">
-                <img className="w-full h-full object-cover" src="/images/mapa.png" alt="Mapa San Pedro" />
+                <Image className="object-cover" src="/images/mapa.png" alt="Mapa San Pedro" fill />
                 <div className="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-all"></div>
               </div>
             </div>
 
-            {/* Social Media[cite: 16] */}
+            {/* Social Media */}
             <div className="bg-[#F8F6F3] p-10 rounded-3xl border border-slate-100">
               <h4 className="font-inter text-xs font-bold text-[#55433a] uppercase tracking-widest mb-6">Acompanhe nossas expedições</h4>
               <div className="grid grid-cols-2 gap-4">
@@ -230,15 +232,15 @@ ${mensagem}`;
         </div>
       </section>
 
-      {/* 4. QUICK FAQ[cite: 16] */}
+      {/* 4. QUICK FAQ */}
       <section className="max-w-4xl mx-auto px-8 py-24">
         <h2 className="text-4xl font-bold text-center mb-16 text-[#221a15]">Dúvidas Frequentes</h2>
         <div className="space-y-4">
           {[
             { q: 'Qual o tempo médio de resposta?', a: 'Pelo WhatsApp, costumamos responder em menos de 15 minutos. Por e-mail, garantimos um retorno em até 24 horas úteis.' },
-            { q: 'Como recebo um orçamento personalizado?', a: 'Basta preencher o formulário acima selecionando "Solicitar orçamento". Nossa equipe entrará em contato para entender seu perfil e montar o roteiro ideal.' },
+            { q: 'Como recebo um pacote personalizado?', a: 'Basta preencher o formulário acima selecionando "Solicitar orçamento". Nossa equipe entrará em contato para entender seu perfil e montar o roteiro ideal.' },
             { q: 'Posso pagar em Reais (BRL)?', a: 'Sim! Facilitamos o pagamento para brasileiros através de PIX ou transferência nacional, evitando taxas de IOF de cartões internacionais.' },
-            { q: 'Quais as formas de pagamento aceitas?', a: 'Aceitamos PIX, Cartão de Crédito (Parcelado), Transferência Bancária e pagamento em espécie (CLP ou USD) diretamente em nossa agência.' },
+            { q: 'Quais as formas de pagamento aceitas?', a: 'Aceitamos PIX, Cartão de Crédito (Parcelamos em até 12x), Transferência Bancária e por Pesos CLP via Wise' },
             { q: 'Qual a política de cancelamento?', a: 'Oferecemos cancelamento flexível. Roteiros mais longos como a travessia do Uyuni possuem regras específicas detalhadas no contrato no momento da reserva.' },
           ].map((faq, i) => (
             <details key={i} className="group bg-white rounded-2xl shadow-[0_4px_20px_rgba(0,0,0,0.03)] overflow-hidden border border-slate-100">

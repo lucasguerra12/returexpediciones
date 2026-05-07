@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Destinos() {
   const destinos = [
@@ -53,11 +54,15 @@ export default function Destinos() {
     <main className="flex min-h-screen flex-col font-manrope bg-white">
       
       {/* HERO SECTION */}
-      <section 
-        className="relative h-[80vh] flex items-center justify-center bg-cover bg-center"
-        style={{ backgroundImage: "url('/images/destinos-hero.png')" }}
-      >
-        <div className="absolute inset-0 bg-black/50"></div>
+      <section className="relative h-[80vh] flex items-center justify-center overflow-hidden">
+        <Image 
+          src="/images/destinos-hero.png" 
+          alt="Destinos Background" 
+          fill 
+          priority 
+          className="object-cover object-center" 
+        />
+        <div className="absolute inset-0 bg-black/50 z-0"></div>
         <div className="relative z-10 text-center text-white px-4">
           <span className="text-sm uppercase tracking-[0.3em] mb-4 block opacity-80">Início {">"} Destinos</span>
           <h1 className="text-5xl md:text-7xl font-bold mb-6 tracking-tight">Escolha seu Destino</h1>
@@ -78,10 +83,11 @@ export default function Destinos() {
           >
             {/* Imagem */}
             <div className="w-full lg:w-1/2 h-[400px] md:h-[500px] rounded-3xl overflow-hidden shadow-2xl relative group">
-              <img 
+              <Image 
                 src={dest.image} 
-                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" 
                 alt={dest.title}
+                fill
+                className="object-cover group-hover:scale-105 transition-transform duration-700" 
               />
               {dest.tag && (
                 <span className="absolute top-6 left-6 bg-retur-terra text-white text-[10px] font-bold px-4 py-1.5 rounded-full uppercase tracking-widest shadow-lg">
@@ -116,9 +122,11 @@ export default function Destinos() {
                 ))}
               </ul>
 
-              <button className="bg-retur-terra text-white px-10 py-4 rounded-xl font-bold hover:bg-orange-700 hover:shadow-xl transition-all w-full sm:w-auto">
-                Explorar {dest.title.split(' ')[dest.title.split(' ').length - 1]}
-              </button>
+              <Link href={`/destinos/${dest.id}`}>
+                <button className="bg-retur-terra text-white px-10 py-4 rounded-xl font-bold hover:bg-orange-700 hover:shadow-xl transition-all w-full sm:w-auto">
+                  Explorar {dest.title.split(' ')[dest.title.split(' ').length - 1]}
+                </button>
+              </Link>
             </div>
           </div>
         ))}
@@ -168,9 +176,14 @@ export default function Destinos() {
       <section className="py-24 bg-retur-terra text-white text-center px-8">
         <h2 className="text-4xl font-bold mb-6">Monte seu Roteiro Sob Medida</h2>
         <p className="mb-10 opacity-90 max-w-xl mx-auto">Fale com um especialista para criar uma viagem que combine perfeitamente com seu tempo e estilo.</p>
-        <button className="bg-white text-retur-terra px-12 py-4 rounded-xl font-bold text-lg hover:shadow-2xl transition-all flex items-center gap-3 mx-auto">
-         Chamar no WhatsApp
-        </button>
+        <a 
+          href="https://wa.me/5517997697872?text=Olá, quero planejar minha viagem sob medida!"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="bg-white text-retur-terra px-12 py-4 rounded-xl font-bold text-lg hover:shadow-2xl transition-all inline-flex items-center gap-3 mx-auto"
+        >
+          Chamar no WhatsApp
+        </a>
       </section>
 
     </main>

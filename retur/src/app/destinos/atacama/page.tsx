@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { passeiosData } from "@/src/data/passeios";
 
 export default function AtacamaPage() {
@@ -9,12 +10,16 @@ export default function AtacamaPage() {
     <main className="flex min-h-screen flex-col font-manrope bg-white">
       
       {/* 1. HERO SECTION */}
-      <section 
-        className="relative h-[70vh] flex items-end pb-20 bg-cover bg-center"
-        style={{ backgroundImage: "url('/images/atacama/atacama.jpg')" }}
-      >
-        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
-        <div className="relative z-10 px-8 max-w-[1440px] mx-auto w-full text-white">
+      <section className="relative h-[70vh] flex items-end pb-20 overflow-hidden">
+        <Image 
+          src="/images/atacama/atacama.jpg" 
+          alt="Atacama Hero" 
+          fill 
+          priority 
+          className="object-cover object-center z-0" 
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent z-10"></div>
+        <div className="relative z-20 px-8 max-w-[1440px] mx-auto w-full text-white">
           <nav className="flex gap-2 text-[10px] uppercase tracking-widest mb-4 opacity-70 font-inter">
             <Link href="/">Início</Link> <span>/</span> <span>Destinos</span> <span>/</span> <span className="text-[#D4773C] font-bold">Atacama</span>
           </nav>
@@ -50,15 +55,15 @@ export default function AtacamaPage() {
 
         {/* Grid de Fotos Estilo Galeria */}
         <div className="grid grid-cols-2 gap-4 h-[600px]">
-          <div className="rounded-2xl overflow-hidden h-full shadow-lg">
-            <img src="/images/atacama/atacama-multi.png" className="w-full h-full object-cover" alt="Atacama Paisagem" />
+          <div className="relative rounded-2xl overflow-hidden h-full shadow-lg">
+            <Image src="/images/atacama/atacama-multi.png" fill className="object-cover" alt="Atacama Paisagem" />
           </div>
           <div className="grid grid-rows-2 gap-4 h-full">
-            <div className="rounded-2xl overflow-hidden shadow-lg">
-              <img src="/images/atacama/atacama-geysers-paisagem.jpg" className="w-full h-full object-cover" alt="Salar Atacama" />
+            <div className="relative rounded-2xl overflow-hidden shadow-lg">
+              <Image src="/images/atacama/atacama-geysers-paisagem.jpg" fill className="object-cover" alt="Salar Atacama" />
             </div>
-            <div className="rounded-2xl overflow-hidden shadow-lg">
-              <img src="/images/atacama/atacama-amigos.jpg" className="w-full h-full object-cover" alt="Geysers" />
+            <div className="relative rounded-2xl overflow-hidden shadow-lg">
+              <Image src="/images/atacama/atacama-amigos.jpg" fill className="object-cover" alt="Geysers" />
             </div>
           </div>
         </div>
@@ -80,13 +85,12 @@ export default function AtacamaPage() {
 
         {/* Container do Carrossel */}
         <div className="flex overflow-x-auto gap-6 px-8 pb-12 snap-x snap-mandatory [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
-          {/* Espaçamento inicial para alinhar com o container */}
           <div className="min-w-[calc((100vw-1440px)/2)] hidden xl:block shrink-0"></div>
           
           {passeiosAtacama.map((tour) => (
             <div key={tour.id} className="min-w-[320px] md:min-w-[400px] bg-white rounded-3xl overflow-hidden shadow-[0_10px_30px_-10px_rgba(0,0,0,0.06)] border border-slate-50 flex flex-col group snap-start shrink-0">
               <div className="relative h-56 overflow-hidden">
-                <img src={`/images/atacama/${tour.imagem}`} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" alt={tour.titulo} />
+                <Image src={`/images/atacama/${tour.imagem}`} fill className="object-cover group-hover:scale-105 transition-transform duration-700" alt={tour.titulo} />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
               </div>
               <div className="p-8 flex flex-col flex-grow">
@@ -107,8 +111,6 @@ export default function AtacamaPage() {
               </div>
             </div>
           ))}
-
-          {/* Espaçamento final para o último item não colar na tela */}
           <div className="min-w-[8px] shrink-0"></div>
         </div>
       </section>

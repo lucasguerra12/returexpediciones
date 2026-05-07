@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { passeiosData } from "@/src/data/passeios";
 
 export default function UyuniPage() {
@@ -8,12 +9,16 @@ export default function UyuniPage() {
     <main className="flex min-h-screen flex-col font-manrope bg-white">
       
       {/* 1. HERO SECTION */}
-      <section 
-        className="relative h-[70vh] flex items-end pb-20 bg-cover bg-center"
-        style={{ backgroundImage: "url('/images/uyuni/uyuni-hero.jpg')" }}
-      >
-        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
-        <div className="relative z-10 px-8 max-w-[1440px] mx-auto w-full text-white">
+      <section className="relative h-[70vh] flex items-end pb-20 overflow-hidden">
+        <Image 
+          src="/images/uyuni/uyuni-hero.jpg" 
+          alt="Salar de Uyuni Hero" 
+          fill 
+          priority 
+          className="object-cover object-center z-0" 
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent z-10"></div>
+        <div className="relative z-20 px-8 max-w-[1440px] mx-auto w-full text-white">
           <nav className="flex gap-2 text-[10px] uppercase tracking-widest mb-4 opacity-70">
             <Link href="/">Início</Link> <span>/</span> <Link href="/destinos">Destinos</Link> <span>/</span> <span className="text-retur-terra font-bold">Salar de Uyuni</span>
           </nav>
@@ -48,15 +53,15 @@ export default function UyuniPage() {
         </div>
 
         <div className="grid grid-cols-2 gap-4 h-[600px]">
-          <div className="rounded-2xl overflow-hidden h-full shadow-lg">
-            <img src="/images/uyuni/uyuni-desertodesal.jpeg" className="w-full h-full object-cover" alt="Salar de Uyuni" />
+          <div className="relative rounded-2xl overflow-hidden h-full shadow-lg">
+            <Image src="/images/uyuni/uyuni-desertodesal.jpeg" fill className="object-cover" alt="Salar de Uyuni" />
           </div>
           <div className="grid grid-rows-2 gap-4 h-full">
-            <div className="rounded-2xl overflow-hidden shadow-lg">
-              <img src="/images/uyuni/uyuni-hero.jpg" className="w-full h-full object-cover" alt="Ilha Incahuasi" />
+            <div className="relative rounded-2xl overflow-hidden shadow-lg">
+              <Image src="/images/uyuni/uyuni-hero.jpg" fill className="object-cover" alt="Ilha Incahuasi" />
             </div>
-            <div className="rounded-2xl overflow-hidden shadow-lg">
-              <img src="/images/uyuni/uyuni-vertical3.png" className="w-full h-full object-cover" alt="Lagoa Colorada" />
+            <div className="relative rounded-2xl overflow-hidden shadow-lg">
+              <Image src="/images/uyuni/uyuni-vertical3.png" fill className="object-cover" alt="Lagoa Colorada" />
             </div>
           </div>
         </div>
@@ -78,13 +83,12 @@ export default function UyuniPage() {
 
         {/* Container do Carrossel */}
         <div className="flex overflow-x-auto gap-6 px-8 pb-12 snap-x snap-mandatory [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
-          {/* Espaçamento inicial para alinhar com o container */}
           <div className="min-w-[calc((100vw-1440px)/2)] hidden xl:block shrink-0"></div>
           
           {passeiosUyuni.map((tour) => (
             <div key={tour.id} className="min-w-[320px] md:min-w-[400px] bg-white rounded-3xl overflow-hidden shadow-[0_10px_30px_-10px_rgba(0,0,0,0.06)] border border-slate-50 flex flex-col group snap-start shrink-0">
               <div className="relative h-56 overflow-hidden">
-                <img src={`/images/uyuni/${tour.imagem}`} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" alt={tour.titulo} />
+                <Image src={`/images/uyuni/${tour.imagem}`} fill className="object-cover group-hover:scale-105 transition-transform duration-700" alt={tour.titulo} />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
               </div>
               <div className="p-8 flex flex-col flex-grow">
@@ -105,8 +109,6 @@ export default function UyuniPage() {
               </div>
             </div>
           ))}
-
-          {/* Espaçamento final para o último item não colar na tela */}
           <div className="min-w-[8px] shrink-0"></div>
         </div>
       </section>
@@ -140,7 +142,12 @@ export default function UyuniPage() {
         <div className="max-w-3xl mx-auto">
           <h2 className="text-4xl md:text-5xl font-bold mb-6">Pronto para a imensidão?</h2>
           <p className="text-lg mb-12 opacity-90 leading-relaxed">Nossos especialistas estão prontos para desenhar a sua jornada personalizada pelo Salar de Uyuni e arredores.</p>
-          <a href="#" className="bg-white text-retur-terra px-10 py-5 rounded-xl font-bold text-lg hover:shadow-2xl transition-all inline-flex items-center gap-3">
+          <a 
+            href={`https://wa.me/${numeroWhatsApp}?text=Olá! Quero montar meu roteiro personalizado para o Salar de Uyuni.`}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bg-white text-retur-terra px-10 py-5 rounded-xl font-bold text-lg hover:shadow-2xl transition-all inline-flex items-center gap-3"
+          >
             Montar meu Roteiro no Uyuni
           </a>
         </div>

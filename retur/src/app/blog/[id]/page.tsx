@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 export default function ArtigoBlogPage() {
   return (
@@ -7,10 +8,12 @@ export default function ArtigoBlogPage() {
       {/* 1. HERO SECTION DO ARTIGO */}
       <section className="relative h-[60vh] md:h-[665px] w-full pt-20 overflow-hidden">
         <div className="absolute inset-0 z-0">
-          <img 
-            className="w-full h-full object-cover" 
+          <Image 
+            className="object-cover" 
             src="/images/uyuni-hero.jpg" 
             alt="Cenário do Salar de Uyuni" 
+            fill
+            priority
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent"></div>
         </div>
@@ -45,14 +48,15 @@ export default function ArtigoBlogPage() {
 
           <h2 className="font-manrope text-3xl font-bold text-[#221a15] mb-6 mt-16">O fenômeno do espelhamento</h2>
           <p className="mb-8">
-            O segredo para ver o Salar de Uyuni transformado em um espelho infinito está na época das chuvas, que ocorre geralmente entre janeiro e março. Uma fina camada de água se acumula sobre o sal, criando um reflexo perfeito do céu. É uma experiência surreal, onde o horizonte desaparece e você sente que está caminhando entre as nuvens[cite: 17].
+            O segredo para ver o Salar de Uyuni transformado em um espelho infinito está na época das chuvas, que ocorre geralmente entre janeiro e março. Uma fina camada de água se acumula sobre o sal, criando um reflexo perfeito do céu. É uma experiência surreal, onde o horizonte desaparece e você sente que está caminhando entre as nuvens.
           </p>
 
-          <div className="my-16 -mx-8 md:-mx-0 rounded-3xl overflow-hidden shadow-lg relative">
-            <img 
+          <div className="my-16 -mx-8 md:-mx-0 rounded-3xl overflow-hidden shadow-lg relative h-[400px] md:h-[500px]">
+            <Image 
               src="/images/uyuni-tour-1.jpg" 
               alt="Reflexo no Salar de Uyuni" 
-              className="w-full h-[400px] md:h-[500px] object-cover"
+              fill
+              className="object-cover"
             />
           </div>
 
@@ -60,20 +64,20 @@ export default function ArtigoBlogPage() {
           <ul className="space-y-6 mb-12">
             <li className="flex items-start gap-4">
               <span className="material-symbols-outlined text-[#D4773C] text-2xl shrink-0">landscape</span>
-              <span><strong className="text-[#221a15]">Proteção Solar:</strong> O reflexo no sal branco é extremamente intenso. Óculos de sol com boa proteção UV e protetor solar FPS 50+ são indispensáveis para evitar queimaduras[cite: 17].</span>
+              <span><strong className="text-[#221a15]">Proteção Solar:</strong> O reflexo no sal branco é extremamente intenso. Óculos de sol com boa proteção UV e protetor solar FPS 50+ são indispensáveis para evitar queimaduras.</span>
             </li>
             <li className="flex items-start gap-4">
               <span className="material-symbols-outlined text-[#D4773C] text-2xl shrink-0">thermostat</span>
-              <span><strong className="text-[#221a15]">Sistema de Camadas:</strong> Mesmo no verão, as noites podem atingir temperaturas negativas. Use o sistema de 3 camadas: térmica, isolante (fleece) e um bom corta-vento[cite: 17].</span>
+              <span><strong className="text-[#221a15]">Sistema de Camadas:</strong> Mesmo no verão, as noites podem atingir temperaturas negativas. Use o sistema de 3 camadas: térmica, isolante (fleece) e um bom corta-vento.</span>
             </li>
             <li className="flex items-start gap-4">
               <span className="material-symbols-outlined text-[#D4773C] text-2xl shrink-0">water_drop</span>
-              <span><strong className="text-[#221a15]">Hidratação:</strong> A altitude desidrata o corpo muito mais rápido do que o normal. Recomendamos beber pelo menos 2 a 3 litros de água por dia[cite: 17].</span>
+              <span><strong className="text-[#221a15]">Hidratação:</strong> A altitude desidrata o corpo muito mais rápido do que o normal. Recomendamos beber pelo menos 2 a 3 litros de água por dia.</span>
             </li>
           </ul>
 
           <blockquote className="border-l-4 border-[#D4773C] pl-8 py-6 my-12 bg-[#fff1eb] rounded-r-2xl italic text-xl font-manrope text-[#221a15]">
-            "O Uyuni não é apenas uma viagem de belas paisagens, é uma jornada de resiliência e contemplação da força da natureza andina."[cite: 17]
+            "O Uyuni não é apenas uma viagem de belas paisagens, é uma jornada de resiliência e contemplação da força da natureza andina."
           </blockquote>
 
           {/* Dica Pro Box */}
@@ -83,7 +87,7 @@ export default function ArtigoBlogPage() {
               <div>
                 <h4 className="font-manrope font-bold text-xl mb-3 text-[#221a15]">Dica de Especialista</h4>
                 <p className="mb-0 text-[#55433a] text-base leading-relaxed">
-                  O "Mal de Altitude" (Soroche) é comum ao passar dos 4.000m. Não subestime a natureza: evite álcool nos primeiros dias, coma refeições leves, beba chá de coca e, acima de tudo, caminhe devagar[cite: 17].
+                  O "Mal de Altitude" (Soroche) é comum ao passar dos 4.000m. Não subestime a natureza: evite álcool nos primeiros dias, coma refeições leves, beba chá de coca e, acima de tudo, caminhe devagar.
                 </p>
               </div>
             </div>
@@ -170,7 +174,7 @@ export default function ArtigoBlogPage() {
             ].map((post, i) => (
               <Link href={`/blog/${post.id}`} key={i} className="bg-[#F8F6F3] rounded-3xl overflow-hidden shadow-sm hover:shadow-[0_10px_30px_-10px_rgba(0,0,0,0.08)] transition-all group border border-slate-50 flex flex-col">
                 <div className="h-48 relative overflow-hidden">
-                  <img src={`/images/${post.imagem}`} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt={post.titulo} />
+                  <Image src={`/images/${post.imagem}`} fill className="object-cover group-hover:scale-105 transition-transform duration-500" alt={post.titulo} />
                 </div>
                 <div className="p-8 flex flex-col flex-grow">
                   <span className="font-inter text-[10px] font-bold text-[#D4773C] uppercase tracking-widest mb-3 block">{post.tag}</span>

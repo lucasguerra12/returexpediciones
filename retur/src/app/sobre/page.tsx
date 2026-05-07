@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 export default function SobreNosPage() {
   return (
@@ -7,10 +8,12 @@ export default function SobreNosPage() {
       {/* 1. HERO SECTION */}
       <section className="relative h-[60vh] md:h-[70vh] flex items-center justify-center overflow-hidden pt-20">
         <div className="absolute inset-0 z-0">
-          <img 
-            className="w-full h-full object-cover" 
+          <Image 
+            className="object-cover" 
             src="/images/combo-sobre.png" 
-            alt="Expedição Retur no Deserto" 
+            alt="Expedição Retur no Deserto"
+            fill
+            priority 
           />
           <div className="absolute inset-0 bg-black/50"></div>
         </div>
@@ -58,7 +61,7 @@ export default function SobreNosPage() {
           {/* Imagem e Métricas */}
           <div className="space-y-8">
             <div className="rounded-3xl overflow-hidden shadow-[0_10px_30px_-10px_rgba(0,0,0,0.1)] h-80 relative">
-              <img src="/images/uyuni/uyuni-1.jpg" alt="História Retur" className="w-full h-full object-cover" />
+              <Image src="/images/uyuni/uyuni-1.jpg" alt="História Retur" fill className="object-cover" />
             </div>
             
             <div className="grid grid-cols-2 gap-6">
@@ -76,7 +79,7 @@ export default function SobreNosPage() {
         </div>
       </section>
 
-      {/* 3. OS TRÊS PILARES (Adaptado do texto fornecido) */}
+      {/* 3. OS TRÊS PILARES */}
       <section className="bg-white py-24 border-y border-slate-100">
         <div className="max-w-7xl mx-auto px-8">
           <div className="text-center mb-16">
@@ -146,10 +149,11 @@ export default function SobreNosPage() {
           </div>
           
           <div className="relative h-[600px] rounded-3xl overflow-hidden shadow-2xl">
-            <img 
+            <Image 
               src="/images/uyuni/uyuni-aventureiro.jpeg" 
               alt="Diferenciais Retur" 
-              className="w-full h-full object-cover" 
+              fill
+              className="object-cover" 
             />
             <div className="absolute inset-0 bg-gradient-to-t from-[#221a15]/60 to-transparent"></div>
             <div className="absolute bottom-10 left-10 right-10">
@@ -162,7 +166,7 @@ export default function SobreNosPage() {
       {/* 5. CTA FINAL */}
       <section className="relative h-[500px] flex items-center justify-center overflow-hidden bg-[#221a15]">
         <div className="absolute inset-0 z-0 opacity-40">
-          <img src="/images/uyuni/uyuni-hero.jpg" alt="Deserto" className="w-full h-full object-cover" />
+          <Image src="/images/uyuni/uyuni-hero.jpg" alt="Deserto" fill className="object-cover" />
         </div>
         
         <div className="relative z-10 text-center px-8 max-w-4xl mx-auto">
