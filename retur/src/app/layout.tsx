@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+
+// Importações nomeadas corretas, exatamente como nos seus arquivos de componentes
 import { Header } from "../components/Header";
 import { Footer } from "../components/Footer";
 
