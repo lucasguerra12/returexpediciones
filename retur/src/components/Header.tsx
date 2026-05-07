@@ -75,6 +75,16 @@ export function Header() {
           <Link href="/sobre" onClick={() => setMenuAberto(false)} className="hover:text-retur-terra border-t border-gray-100 pt-4">Sobre Nós</Link>
           <Link href="/blog" onClick={() => setMenuAberto(false)} className="hover:text-retur-terra">Blog</Link>
           <Link href="/contato" onClick={() => setMenuAberto(false)} className="hover:text-retur-terra">Contato</Link>
+          
+          <a 
+            href="https://wa.me/5517997697872?text=Olá, gostaria de ajuda para montar meu roteiro!"
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={() => setMenuAberto(false)}
+            className="mt-4 w-full bg-retur-terra text-white px-6 py-3 rounded-lg font-bold text-sm text-center hover:bg-orange-700 transition-all shadow-md"
+          >
+            Reservar Agora
+          </a>
         </div>
       )}
     </header>
