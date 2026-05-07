@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useState } from "react";
 
 export default function ComboPage() {
@@ -35,7 +36,7 @@ export default function ComboPage() {
         {/* Lado Esquerdo - Atacama */}
         <div className="relative w-full h-1/2 md:h-full md:w-1/2 group">
           <div className="absolute inset-0 bg-black/40 z-10 transition-colors duration-500 group-hover:bg-black/20"></div>
-          <img className="absolute inset-0 w-full h-full object-cover" src="/images/atacama/atacama-licancanbur-vulcao-hori.jpeg" alt="Atacama" />
+          <Image src="/images/atacama/atacama-licancanbur-vulcao-hori.jpeg" alt="Atacama" fill priority className="object-cover z-0" />
           <div className="absolute bottom-10 left-10 z-20">
             <span className="text-white/80 font-inter font-medium uppercase tracking-widest text-sm">Chile</span>
             <h3 className="text-white font-bold text-3xl">Deserto do Atacama</h3>
@@ -45,7 +46,7 @@ export default function ComboPage() {
         {/* Lado Direito - Uyuni */}
         <div className="relative w-full h-1/2 md:h-full md:w-1/2 group">
           <div className="absolute inset-0 bg-black/40 z-10 transition-colors duration-500 group-hover:bg-black/20"></div>
-          <img className="absolute inset-0 w-full h-full object-cover" src="/images/uyuni/uyuni.jpg" alt="Uyuni" />
+          <Image src="/images/uyuni/uyuni.jpg" alt="Uyuni" fill priority className="object-cover z-0" />
           <div className="absolute bottom-10 right-10 z-20 text-right">
             <span className="text-white/80 font-inter font-medium uppercase tracking-widest text-sm">Bolívia</span>
             <h3 className="text-white font-bold text-3xl">Salar de Uyuni</h3>
@@ -97,8 +98,6 @@ export default function ComboPage() {
         </div>
       </section>
 
-      
-
       {/* 4. MAPA DA ROTA */}
       <section className="py-24 max-w-7xl mx-auto px-8">
         <div className="bg-[#f0dfd7] rounded-[40px] overflow-hidden grid grid-cols-1 lg:grid-cols-2 shadow-[0_10px_30px_-10px_rgba(0,0,0,0.08)]">
@@ -143,8 +142,8 @@ export default function ComboPage() {
               </div>
             </div>
           </div>
-          <div className="h-[400px] lg:h-auto min-h-[500px]">
-            <img className="w-full h-full object-cover" src="/images/salarmapa.png" alt="Mapa da Rota Atacama para Uyuni" />
+          <div className="relative h-[400px] lg:h-auto min-h-[500px]">
+            <Image src="/images/salarmapa.png" fill className="object-cover" alt="Mapa da Rota Atacama para Uyuni" />
           </div>
         </div>
       </section>

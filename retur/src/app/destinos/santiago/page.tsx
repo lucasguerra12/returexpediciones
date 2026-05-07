@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { passeiosData } from "@/src/data/passeios";
 
 export default function SantiagoPage() {
@@ -6,17 +7,20 @@ export default function SantiagoPage() {
   const numeroWhatsApp = "5517997697872";
     const passeiosSantiago = passeiosData.santiago;
 
-
   return (
     <main className="flex min-h-screen flex-col font-manrope bg-white">
       
       {/* 1. HERO SECTION */}
-      <section 
-        className="relative h-[70vh] flex items-end pb-20 bg-cover bg-center"
-        style={{ backgroundImage: "url('/images/santiago/santiago-hero.jpg')" }}
-      >
-        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
-        <div className="relative z-10 px-8 max-w-[1440px] mx-auto w-full text-white">
+      <section className="relative h-[70vh] flex items-end pb-20 overflow-hidden">
+        <Image 
+          src="/images/santiago/santiago-hero.jpg" 
+          alt="Santiago Hero" 
+          fill 
+          priority 
+          className="object-cover object-center z-0" 
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent z-10"></div>
+        <div className="relative z-20 px-8 max-w-[1440px] mx-auto w-full text-white">
           <nav className="flex gap-2 text-[10px] uppercase tracking-widest mb-4 opacity-70">
             <Link href="/">Início</Link> <span>/</span> <Link href="/destinos">Destinos</Link> <span>/</span> <span className="text-retur-terra font-bold">Santiago</span>
           </nav>
@@ -51,15 +55,15 @@ export default function SantiagoPage() {
         </div>
 
         <div className="grid grid-cols-2 gap-4 h-[600px]">
-            <div className="rounded-2xl overflow-hidden shadow-lg">
-              <img src="/images/santiago/santiago-gal-3.jpeg" className="w-full h-full object-cover" alt="Valle Nevado" />
+            <div className="relative rounded-2xl overflow-hidden shadow-lg">
+              <Image src="/images/santiago/santiago-gal-3.jpeg" fill className="object-cover" alt="Valle Nevado" />
             </div>
           <div className="grid grid-rows-2 gap-4 h-full">
-            <div className="rounded-2xl overflow-hidden shadow-lg">
-              <img src="/images/santiago/santiago-amigos.jpeg" className="w-full h-full object-cover" alt="Vinícola" />
+            <div className="relative rounded-2xl overflow-hidden shadow-lg">
+              <Image src="/images/santiago/santiago-amigos.jpeg" fill className="object-cover" alt="Vinícola" />
             </div>
-            <div className="rounded-2xl overflow-hidden h-full shadow-lg">
-            <img src="/images/santiago/santiago-neve.jpeg" className="w-full h-full object-cover" alt="Centro de Santiago" />
+            <div className="relative rounded-2xl overflow-hidden h-full shadow-lg">
+            <Image src="/images/santiago/santiago-neve.jpeg" fill className="object-cover" alt="Centro de Santiago" />
           </div>
           </div>
         </div>
@@ -81,13 +85,12 @@ export default function SantiagoPage() {
 
         {/* Container do Carrossel */}
         <div className="flex overflow-x-auto gap-6 px-8 pb-12 snap-x snap-mandatory [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
-          {/* Espaçamento inicial para alinhar com o container */}
           <div className="min-w-[calc((100vw-1440px)/2)] hidden xl:block shrink-0"></div>
           
           {passeiosSantiago.map((tour) => (
             <div key={tour.id} className="min-w-[320px] md:min-w-[400px] bg-white rounded-3xl overflow-hidden shadow-[0_10px_30px_-10px_rgba(0,0,0,0.06)] border border-slate-50 flex flex-col group snap-start shrink-0">
               <div className="relative h-56 overflow-hidden">
-                <img src={`/images/santiago/${tour.imagem}`} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" alt={tour.titulo} />
+                <Image src={`/images/santiago/${tour.imagem}`} fill className="object-cover group-hover:scale-105 transition-transform duration-700" alt={tour.titulo} />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
               </div>
               <div className="p-8 flex flex-col flex-grow">
@@ -108,8 +111,6 @@ export default function SantiagoPage() {
               </div>
             </div>
           ))}
-
-          {/* Espaçamento final para o último item não colar na tela */}
           <div className="min-w-[8px] shrink-0"></div>
         </div>
       </section>

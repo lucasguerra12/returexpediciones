@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useState } from "react";
 
 export default function BlogPage() {
@@ -98,7 +99,7 @@ export default function BlogPage() {
       {/* 1. HERO SECTION */}
       <section className="relative h-[460px] flex items-center justify-center overflow-hidden pt-20 bg-slate-900">
         <div className="absolute inset-0 z-0 opacity-60">
-          <img className="w-full h-full object-cover" src="/images/atacama-hero.jpg" alt="Deserto do Atacama" />
+          <Image className="object-cover" src="/images/atacama-hero.jpg" alt="Deserto do Atacama" fill priority />
           <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-black/30"></div>
         </div>
         
@@ -121,7 +122,7 @@ export default function BlogPage() {
         <div className="mb-20">
           <Link href="/blog/hotel-de-sal-uyuni" className="bg-white rounded-3xl overflow-hidden flex flex-col md:flex-row shadow-[0_10px_30px_-10px_rgba(0,0,0,0.08)] group transition-transform duration-300 hover:-translate-y-2 border border-slate-50 cursor-pointer">
             <div className="md:w-1/2 h-80 md:h-auto relative overflow-hidden">
-              <img src="/images/uyuni-hero.jpg" alt="Salar de Uyuni Espelho" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+              <Image src="/images/uyuni-hero.jpg" alt="Salar de Uyuni Espelho" fill className="object-cover group-hover:scale-105 transition-transform duration-700" />
               <div className="absolute top-6 left-6 flex gap-2">
                 <span className="bg-[#D4773C] text-white font-inter font-bold text-[10px] px-4 py-1.5 rounded-full uppercase tracking-widest shadow-md">DESTAQUE</span>
               </div>
@@ -156,7 +157,7 @@ export default function BlogPage() {
               {postsAtuais.map((post) => (
                 <Link href={`/blog/${post.id}`} key={post.id} className="bg-white rounded-3xl overflow-hidden shadow-[0_10px_30px_-10px_rgba(0,0,0,0.06)] group border border-slate-50 cursor-pointer flex flex-col hover:-translate-y-2 transition-transform duration-300">
                   <div className="aspect-[4/3] relative overflow-hidden">
-                    <img src={`/images/${post.imagem}`} alt={post.titulo} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+                    <Image src={`/images/${post.imagem}`} alt={post.titulo} fill className="object-cover group-hover:scale-105 transition-transform duration-700" />
                   </div>
                   <div className="p-8 flex flex-col flex-grow">
                     <div className="flex gap-2 mb-4">
@@ -232,8 +233,8 @@ export default function BlogPage() {
                 </div>
               </div>
               <div className="grid grid-cols-2 gap-3">
-                <div className="aspect-square rounded-xl overflow-hidden"><img src="/images/atacama-v-luna.jpg" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" /></div>
-                <div className="aspect-square rounded-xl overflow-hidden"><img src="/images/uyuni-hero.jpg" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" /></div>
+                <div className="aspect-square relative rounded-xl overflow-hidden"><Image src="/images/atacama-v-luna.jpg" alt="Atacama" fill className="object-cover group-hover:scale-105 transition-transform duration-500" /></div>
+                <div className="aspect-square relative rounded-xl overflow-hidden"><Image src="/images/uyuni-hero.jpg" alt="Uyuni" fill className="object-cover group-hover:scale-105 transition-transform duration-500" /></div>
               </div>
             </a>
 
