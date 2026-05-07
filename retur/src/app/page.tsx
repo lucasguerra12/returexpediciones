@@ -46,6 +46,7 @@ export default function Home() {
       </section>
 
       {/* 2. ESCOLHA SEU DESTINO */}
+      {/* 2. ESCOLHA SEU DESTINO */}
       <section className="py-24 px-8 max-w-[1440px] mx-auto w-full">
         <h2 className="text-4xl font-bold text-retur-texto mb-12">
           Escolha seu Destino
@@ -53,8 +54,7 @@ export default function Home() {
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {/* Card Atacama */}
-          <Link href="/destinos/atacama" className="group relative h-[500px] rounded-2xl overflow-hidden cursor-pointer shadow-xl">
-          <div className="group relative h-[500px] rounded-2xl overflow-hidden cursor-pointer shadow-xl">
+          <Link href="/destinos/atacama" className="group relative h-[500px] rounded-2xl overflow-hidden cursor-pointer shadow-xl block">
             <Image src="/images/atacama/atacama-ruta-hori.jpg" alt="Atacama" fill className="object-cover group-hover:scale-110 transition-transform duration-700" />
             <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent"></div>
             <div className="absolute bottom-8 left-8 text-white">
@@ -64,11 +64,10 @@ export default function Home() {
                 VER ROTEIROS <span className="text-xl">→</span>
               </span>
             </div>
-          </div>
           </Link> 
 
           {/* Card Uyuni */}
-          <div className="group relative h-[500px] rounded-2xl overflow-hidden cursor-pointer shadow-xl">
+          <Link href="/destinos/uyuni" className="group relative h-[500px] rounded-2xl overflow-hidden cursor-pointer shadow-xl block">
             <Image src="/images/uyuni/uyuni-vertical3.png" alt="Uyuni" fill className="object-cover group-hover:scale-110 transition-transform duration-700" />
             <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent"></div>
             <div className="absolute bottom-8 left-8 text-white">
@@ -78,10 +77,10 @@ export default function Home() {
                 VER ROTEIROS <span className="text-xl">→</span>
               </span>
             </div>
-          </div>
+          </Link>
 
           {/* Card Santiago */}
-          <div className="group relative h-[500px] rounded-2xl overflow-hidden cursor-pointer shadow-xl">
+          <Link href="/destinos/santiago" className="group relative h-[500px] rounded-2xl overflow-hidden cursor-pointer shadow-xl block">
             <Image src="/images/santiago/santiago-gal-3.jpeg" alt="Santiago" fill className="object-cover group-hover:scale-110 transition-transform duration-700" />
             <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent"></div>
             <div className="absolute bottom-8 left-8 text-white">
@@ -91,10 +90,10 @@ export default function Home() {
                 VER ROTEIROS <span className="text-xl">→</span>
               </span>
             </div>
-          </div>
+          </Link>
 
           {/* Card Combo */}
-          <div className="group relative h-[500px] rounded-2xl overflow-hidden cursor-pointer shadow-xl border-2 border-retur-terra">
+          <Link href="/destinos/combo" className="group relative h-[500px] rounded-2xl overflow-hidden cursor-pointer shadow-xl border-2 border-retur-terra block">
             <Image src="/images/uyuni/dest-uyuni.jpg" alt="Atacama + Uyuni" fill className="object-cover group-hover:scale-110 transition-transform duration-700" />
             <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent"></div>
             <div className="absolute top-6 right-6 bg-retur-terra text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-widest">
@@ -107,7 +106,7 @@ export default function Home() {
                 VER COMBO <span className="text-xl">→</span>
               </span>
             </div>
-          </div>
+          </Link>
         </div>
       </section>
 
