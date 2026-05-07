@@ -140,22 +140,23 @@ export default function Home() {
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
-              { name: 'Mariana Silva', date: 'Maio 2023', comment: 'Experiência surreal! A Retur cuidou de todos os detalhes, desde o translado até as melhores dicas para fotos no Salar.', rating: 5 },
-              { name: 'Ricardo Oliveira', date: 'Outubro 2022', comment: 'Melhor escolha que fizemos. Os carros são novos, a comida estava ótima mesmo no meio do deserto. Segurança total.', rating: 5 },
-              { name: 'Fernanda Costa', date: 'Agosto 2023', comment: 'Viagem dos sonhos. O atendimento desde o primeiro contato foi impecável. Toda a equipe é muito dedicada.', rating: 5 },
+              { name: 'Ligia Pitta', date: 'Há 3 semanas', comment: 'É a 2ª vez que viajo com a Retur. Agência séria, responde rápido, tira todas as dúvidas. A viagem foi perfeita! Iara uma simpatia, sempre me atendendo.', rating: 5, initial: 'L' },
+              { name: 'Tereza Cristina', date: 'Há 6 meses', comment: 'Amei minha experiência solo no Atacama e Uyuni. Desde o primeiro contato, fui muito bem atendida e assessorada. A viagem foi maravilhosa, inesquecível!', rating: 5, initial: 'T' },
+              { name: 'Michele Lisboa', date: 'Há 3 meses', comment: 'A experiência foi incrível. Pontualidade, atendimento rápido. Sem contar com o suporte desde o Brasil até o fim da viagem, sempre prontos a tirar dúvidas.', rating: 5, initial: 'M' },
             ].map((review, idx) => (
-              <div key={idx} className="bg-[#FFF4F0] p-10 rounded-3xl flex flex-col justify-between">
+              <div key={idx} className="bg-[#FFF4F0] p-10 rounded-3xl flex flex-col justify-between hover:shadow-md transition-shadow">
                 <div>
-                  <div className="flex gap-1 mb-6 text-retur-terra">
+                  <div className="flex gap-1 mb-6 text-yellow-500">
                     {[...Array(review.rating)].map((_, i) => (
-                      <span key={i} className="material-symbols-outlined text-[20px] fill-current">star</span>
+                      <span key={i} className="material-symbols-outlined text-[20px] fill-current" style={{ fontVariationSettings: "'FILL' 1" }}>star</span>
                     ))}
                   </div>
                   <p className="text-retur-texto italic leading-relaxed mb-8 text-lg">"{review.comment}"</p>
                 </div>
                 <div className="flex items-center gap-4">
-                  <div className="w-14 h-14 bg-gray-300 rounded-full overflow-hidden border-2 border-white shadow-sm relative">
-                    <Image src={`/images/avatar-${idx+1}.jpg`} alt={review.name} width={56} height={56} className="w-full h-full object-cover" />
+                  {/* Avatar com a Inicial do Nome */}
+                  <div className="w-14 h-14 bg-retur-terra text-white rounded-full flex items-center justify-center font-bold text-2xl shadow-sm">
+                    {review.initial}
                   </div>
                   <div>
                     <h5 className="font-bold text-sm">{review.name}</h5>
@@ -166,10 +167,24 @@ export default function Home() {
             ))}
           </div>
           
-          <div className="mt-16 flex justify-center items-center gap-4 grayscale opacity-40">
-            <span className="text-xs font-bold uppercase tracking-widest">Avaliações reais via</span>
-            <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" alt="Google" className="h-6" />
+          {/* Botão de Redirecionamento para o Google com visual premium */}
+          <div className="mt-16 flex justify-center">
+            <a 
+              href="https://www.google.com/search?client=opera&q=retur+expediciones&sourceid=opera&ie=UTF-8&oe=UTF-8#sv=CAwS-AEKBmxjbF9wdhI-CgNwdnESN0NnMHZaeTh4TVhoeWJURTRPRE4wSWhnS0VuSmxkSFZ5SUdWNGNHVmthV05wYjI1bGN4QUNHQU0SbQoDbHFpEmZDaEp5WlhSMWNpQmxlSEJsWkdsamFXOXVaWE5JLWNEUXNONjhnSUFJV2h3UUFCQUJHQUFZQVNJU2NtVjBkWElnWlhod1pXUnBZMmx2Ym1WemtnRU5kSEpoZG1Wc1gyRm5aVzVqZVESEgoDdGJzEgtscmY6ITNzSUFFPRIXCgFxEhJyZXR1ciBleHBlZGljaW9uZXMaEmxvY2FsLXBsYWNlLXZpZXdlchgKIOvw_vsM"
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="group inline-flex items-center gap-3 bg-white text-retur-texto px-8 py-4 rounded-full border border-gray-200 shadow-sm hover:border-retur-terra hover:shadow-md transition-all duration-300"
+            >
+              <img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" alt="Google Logo" className="w-5 h-5" />
+              <span className="font-bold text-sm tracking-widest uppercase text-gray-700 group-hover:text-retur-terra transition-colors">
+                Ver todas as avaliações no Google
+              </span>
+              <span className="material-symbols-outlined text-gray-400 group-hover:text-retur-terra group-hover:translate-x-1 transition-all">
+                arrow_forward
+              </span>
+            </a>
           </div>
+
         </div>
       </section>
 
