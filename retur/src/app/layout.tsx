@@ -35,20 +35,24 @@ export default function RootLayout({
         <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
       </head>
       <body suppressHydrationWarning className="antialiased font-manrope">
+        
+        {/* --- TAG DO GOOGLE ADS --- */}
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=AW-17692064973"
           strategy="afterInteractive"
         />
-        <Script id="google-ads-tag" strategy="afterInteractive">
-          {`
+        <Script id="google-ads-tag" strategy="afterInteractive" dangerouslySetInnerHTML={{
+          __html: `
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
             gtag('config', 'AW-17692064973');
-          `}
-        </Script>
-        <Script id="meta-pixel" strategy="afterInteractive">
-          {`
+          `
+        }} />
+
+        {/* --- PIXEL DA META (FACEBOOK) --- */}
+        <Script id="meta-pixel" strategy="afterInteractive" dangerouslySetInnerHTML={{
+          __html: `
             !function(f,b,e,v,n,t,s)
             {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
             n.callMethod.apply(n,arguments):n.queue.push(arguments)};
@@ -58,11 +62,11 @@ export default function RootLayout({
             s.parentNode.insertBefore(t,s)}(window, document,'script',
             'https://connect.facebook.net/en_US/fbevents.js');
             
-            // Substitua o número abaixo pelo ID que a cliente mandou:
-            fbq('init', 'COLOQUE_O_NUMERO_AQUI'); 
+            fbq('init', '1241331310301456'); 
             fbq('track', 'PageView');
-          `}
-        </Script>
+          `
+        }} />
+
         <Header />
         {children}
         <Footer />

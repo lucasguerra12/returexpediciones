@@ -90,7 +90,9 @@ export default function BlogPage() {
 
   const irParaPagina = (pagina: number) => {
     setPaginaAtual(pagina);
-    window.scrollTo({ top: 600, behavior: 'smooth' });
+    if (typeof window !== 'undefined') {
+      window.scrollTo({ top: 600, behavior: 'smooth' });
+    }
   };
 
   return (

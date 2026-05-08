@@ -38,7 +38,9 @@ ${mensagem}`;
 
     // Codificando o texto para URL e abrindo a janela do WhatsApp
     const encodedText = encodeURIComponent(texto);
-    window.open(`https://wa.me/${numeroOficial}?text=${encodedText}`, "_blank");
+    if (typeof window !== 'undefined') {
+      window.open(`https://wa.me/${numeroOficial}?text=${encodedText}`, "_blank");
+    }
   };
 
   return (
