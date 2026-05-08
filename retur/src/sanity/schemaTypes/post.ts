@@ -12,32 +12,49 @@ export const post = {
     {
       name: 'slug',
       title: 'URL do Artigo (Link)',
-      description: 'Clique em "Generate" para criar o link automaticamente a partir do título.',
       type: 'slug',
+      options: { source: 'title', maxLength: 96 },
+      validation: (Rule: any) => Rule.required(),
+    },
+    {
+      name: 'category',
+      title: 'Categoria',
+      type: 'string',
       options: {
-        source: 'title',
-        maxLength: 96,
+        list: [
+          { title: 'Dicas de Viagem', value: 'dicas' },
+          { title: 'Roteiros', value: 'roteiros' },
+          { title: 'Curiosidades', value: 'curiosidades' },
+          { title: 'Gastronomia', value: 'gastronomia' },
+        ],
+        layout: 'dropdown', 
       },
       validation: (Rule: any) => Rule.required(),
+    },
+    {
+      name: 'resumo',
+      title: 'Resumo (Chamada do Artigo)',
+      type: 'text',
+      description: 'Um texto curto de 2 a 3 linhas que vai aparecer no card principal do blog.',
+      validation: (Rule: any) => Rule.max(200),
     },
     {
       name: 'mainImage',
       title: 'Imagem de Capa',
       type: 'image',
-      options: {
-        hotspot: true, // Permite que a cliente recorte a imagem no painel
-      },
+      options: { hotspot: true },
     },
     {
       name: 'publishedAt',
       title: 'Data de Publicação',
       type: 'datetime',
+      initialValue: () => new Date().toISOString(),
     },
     {
       name: 'body',
       title: 'Texto do Artigo',
       type: 'array',
-      of: [{ type: 'block' }], // Isso permite texto rico (negrito, itálico, listas)
+      of: [{ type: 'block' }],
     },
   ],
 }

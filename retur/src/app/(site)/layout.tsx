@@ -1,12 +1,10 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
-import "./globals.css";
+import ".././globals.css";
 import Script from 'next/script';
-import { CookieBanner } from '../components/CookieBanner';
-
-// Importações nomeadas corretas, exatamente como nos seus arquivos de componentes
-import { Header } from "../components/Header";
-import { Footer } from "../components/Footer";
+import { CookieBanner } from '../../components/CookieBanner';
+import { Header } from "../../components/Header";
+import { Footer } from "../../components/Footer";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
