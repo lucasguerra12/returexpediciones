@@ -5,7 +5,6 @@ import Image from "next/image";
 import { useState } from "react";
 
 export default function ContatoPage() {
-  // Estados para capturar os dados do formulário
   const [nome, setNome] = useState("");
   const [email, setEmail] = useState("");
   const [whatsapp, setWhatsapp] = useState("");
@@ -13,15 +12,11 @@ export default function ContatoPage() {
   const [destino, setDestino] = useState("Atacama");
   const [pessoas, setPessoas] = useState("1");
   const [mensagem, setMensagem] = useState("");
-
-  // O seu número oficial
   const numeroOficial = "5517997697872";
-
-  // Função que monta o texto e envia para o WhatsApp
   const handleWhatsAppSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     
-    // Montando a mensagem padronizada
+    // mensagem padronizada
     const texto = `Olá, equipe Retur Expedições! Gostaria de falar sobre: *${assunto}*
 
 *Detalhes do Contato:*
@@ -35,10 +30,10 @@ Número de Pessoas: ${pessoas}
 
 *Mensagem:*
 ${mensagem}`;
-
-    // Codificando o texto para URL e abrindo a janela do WhatsApp
     const encodedText = encodeURIComponent(texto);
-    window.open(`https://wa.me/${numeroOficial}?text=${encodedText}`, "_blank");
+    if (typeof window !== 'undefined') {
+      window.open(`https://wa.me/${numeroOficial}?text=${encodedText}`, "_blank");
+    }
   };
 
   return (

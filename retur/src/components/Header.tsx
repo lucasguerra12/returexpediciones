@@ -11,7 +11,6 @@ export function Header() {
     <header className="w-full py-2 px-6 md:px-8 bg-white/90 backdrop-blur-md fixed top-0 z-50 border-b border-gray-100 min-h-[90px] flex items-center">
       <div className="max-w-7xl mx-auto w-full flex items-center justify-between">
         
-        {/* --- ESQUERDA: LOGO --- */}
         <div className="flex md:w-1/4 justify-start">
           <Link href="/" className="flex items-center">
             <Image 
@@ -50,7 +49,7 @@ export function Header() {
             </div>
 
             <Link href="/sobre" className="hover:text-retur-terra transition-colors">Sobre Nós</Link>
-            {/*<Link href="/blog" className="hover:text-retur-terra transition-colors">Blog</Link> */}
+            <Link href="/blog" className="hover:text-retur-terra transition-colors">Blog</Link>
             <Link href="/contato" className="hover:text-retur-terra transition-colors">Contato</Link>
           </nav>
         </div>
