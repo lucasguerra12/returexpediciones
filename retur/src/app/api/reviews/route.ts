@@ -1,13 +1,30 @@
+import { createClient } from 'next-sanity';
 import { NextResponse } from 'next/server';
 
-export async function GET() {
-  const PLACE_ID = 'SEU_PLACE_ID_DO_GOOGLE';
-  const API_KEY = process.env.GOOGLE_MAPS_API_KEY;
+const client = createClient({
+  projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID,
+  dataset: process.env.NEXT_PUBLIC_SANITY_DATASET,
+  useCdn: false,
+  token: process.env.SANITY_API_WRITE_TOKEN, 
+});
 
-  const url = `https://maps.googleapis.com/maps/api/place/details/json?place_id=${PLACE_ID}&fields=reviews,rating&key=${API_KEY}`;
+export async function POST(request: Request) {
+  try {
+    const body = await request.json();
+    const { author, rating, comment } = body;
 
-  const res = await fetch(url);
-  const data = await res.json();
+    // Cria o documento no Sanity
+    const result = await client.create({
+      _type: 'review',
+      author,
+      rating: Number(rating),
+      comment,
+      approved: false, // Toda avaliação nasce reprovada para moderação
+    });
 
-  return NextResponse.json(data.result.reviews);
+    return NextResponse.json({ message: 'Avaliação enviada com sucesso!', id: result._id });
+  } catch (err) {
+    console.error('Erro ao enviar avaliação:', err);
+    return NextResponse.json({ message: 'Erro ao processar avaliação.' }, { status: 500 });
+  }
 }

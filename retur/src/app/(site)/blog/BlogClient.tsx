@@ -4,7 +4,6 @@ import Link from "next/link";
 import Image from "next/image";
 import { useState } from "react";
 
-// Tipagem do que vem do Sanity
 type Post = {
   _id: string;
   title: string;
@@ -22,12 +21,10 @@ export default function BlogClient({ posts }: { posts: Post[] }) {
   const categoriasExistentes = Array.from(new Set(posts.map((post) => post.category)));
   const abas = ["Todas", ...categoriasExistentes];
 
-  // 2. Filtro de Categoria
   const postsFiltrados = categoriaAtiva === "Todas" 
     ? posts 
     : posts.filter(post => post.category === categoriaAtiva);
 
-  // 3. Paginação
   const totalPaginas = Math.ceil(postsFiltrados.length / postsPorPagina);
   const indexUltimoPost = paginaAtual * postsPorPagina;
   const indexPrimeiroPost = indexUltimoPost - postsPorPagina;
