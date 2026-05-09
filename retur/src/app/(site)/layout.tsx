@@ -34,7 +34,7 @@ export default function RootLayout({
       </head>
       <body suppressHydrationWarning className="antialiased font-manrope">
         
-        {/* --- GOOGLE TAG MANAGER (Noscript) - Logo no início do body --- */}
+        {/* --- GOOGLE TAG MANAGER (Noscript) --- */}
         <noscript>
           <iframe 
             src="https://www.googletagmanager.com/ns.html?id=GTM-WLLLMGW9"
@@ -83,6 +83,17 @@ export default function RootLayout({
             
             fbq('init', '1241331310301456'); 
             fbq('track', 'PageView');
+          `
+        }} />
+
+        {/* --- CALLBELL (Botão Flutuante de Chat) --- */}
+        {/* Utilizamos lazyOnload para que o chat só carregue DEPOIS que o site inteiro já estiver pronto e rápido para o usuário */}
+        <Script id="callbell-chat" strategy="lazyOnload" dangerouslySetInnerHTML={{
+          __html: `
+            window.callbellSettings = window.callbellSettings || {};
+            window.callbellSettings["uuid"] = "e9d9e3af-ae5e-4768-8679-d40d28dbd3cd";
+            window.callbellSettings["script_token"] = "E9iv8tGcezpE91pMzbHvadnX";
+            (function(){var w=window;var d=document;var l=function(){var s=d.createElement('script');s.async=true;s.src='https://dash.callbell.eu/include/livechat/'+window.callbellSettings.script_token+'/'+window.callbellSettings.uuid+'.js';var x=d.getElementsByTagName('script')[0];x.parentNode.insertBefore(s,x);};w.addEventListener('load',l,false);})();
           `
         }} />
 
