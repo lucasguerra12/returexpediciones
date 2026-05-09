@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import ".././globals.css";
-import Script from 'next/script';
+import Script from 'next/script'; 
 import { CookieBanner } from '../../components/CookieBanner';
 import { Header } from "../../components/Header";
 import { Footer } from "../../components/Footer";
@@ -86,16 +86,21 @@ export default function RootLayout({
           `
         }} />
 
-        {/* --- CALLBELL (Botão Flutuante de Chat) --- */}
-        {/* Utilizamos lazyOnload para que o chat só carregue DEPOIS que o site inteiro já estiver pronto e rápido para o usuário */}
-        <Script id="callbell-chat" strategy="lazyOnload" dangerouslySetInnerHTML={{
+        {/* --- CALLBELL SETTINGS (Ajustado para Next.js) --- */}
+        <Script id="callbell-settings" strategy="lazyOnload" dangerouslySetInnerHTML={{
           __html: `
             window.callbellSettings = window.callbellSettings || {};
             window.callbellSettings["uuid"] = "e9d9e3af-ae5e-4768-8679-d40d28dbd3cd";
             window.callbellSettings["script_token"] = "E9iv8tGcezpE91pMzbHvadnX";
-            (function(){var w=window;var d=document;var l=function(){var s=d.createElement('script');s.async=true;s.src='https://dash.callbell.eu/include/livechat/'+window.callbellSettings.script_token+'/'+window.callbellSettings.uuid+'.js';var x=d.getElementsByTagName('script')[0];x.parentNode.insertBefore(s,x);};w.addEventListener('load',l,false);})();
           `
         }} />
+
+        {/* --- CALLBELL CHAT WIDGET --- */}
+        <Script 
+          id="callbell-chat" 
+          src="https://dash.callbell.eu/include/livechat/E9iv8tGcezpE91pMzbHvadnX/e9d9e3af-ae5e-4768-8679-d40d28dbd3cd.js" 
+          strategy="lazyOnload" 
+        />
 
         <Header />
         {children}
