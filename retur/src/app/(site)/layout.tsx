@@ -83,6 +83,7 @@ export default function RootLayout({
             
             fbq('init', '1241331310301456'); 
             fbq('track', 'PageView');
+            fbq('track', 'Lead');
           `
         }} />
 

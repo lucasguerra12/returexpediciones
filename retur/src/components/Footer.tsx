@@ -52,10 +52,25 @@ export function Footer() {
         </div>
       </div>
       
-      <div className="max-w-7xl mx-auto px-8 pt-8 border-t border-gray-100 text-center">
-        <p className="text-[10px] text-gray-400 uppercase tracking-[0.2em]">
-          © 2024 Retur Expedições. Especialistas em Atacama e Uyuni.
-        </p>
+      <div className="max-w-7xl mx-auto px-8 pt-8 border-t border-gray-100 text-center flex flex-col items-center gap-4">
+        
+        <div className="opacity-80 hover:opacity-100 transition-opacity">
+          <img 
+            src="/images/imagem_cadastur.jpg" 
+            alt="Selo oficial Cadastur" 
+            className="h-12 w-auto object-contain" 
+          />
+        </div>
+
+        <div>
+          <p className="text-[10px] text-gray-400 uppercase tracking-[0.2em]">
+            © 2024 Retur Expedições. Especialistas em Atacama e Uyuni.
+          </p>
+          <p className="text-[10px] text-gray-400 uppercase tracking-[0.2em] mt-1">
+            Registro Cadastur: 52737968/0001-07
+          </p>
+        </div>
+        
       </div>
     </footer>
   );
