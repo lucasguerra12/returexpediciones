@@ -11,7 +11,7 @@ export default function Destinos() {
       image: "/images/atacama/atacama-valle.jpg",
       tag: "Mais Popular",
       altitude: "2.400m",
-      epoca: "Mar - Nov",
+      epoca: "Março - Novembro",
       temp: "0°C a 25°C",
       features: ["Lagoas Altiplânicas", "Geysers", "Valle de la Luna", "Tour Astronômico"]
     },
@@ -22,7 +22,7 @@ export default function Destinos() {
       description: "O maior deserto de sal do mundo, um horizonte infinito que se transforma em um espelho perfeito durante o verão.",
       image: "/images/uyuni/uyuni-aventureiro-1.jpeg",
       altitude: "3.650m",
-      epoca: "Jan - Abr",
+      epoca: "Janeiro - Abril",
       temp: "-10°C a 15°C",
       features: ["Espelho d'água", "Ilha Incahuasi", "Cemitério de Trens", "Lagoas Coloradas"]
     },

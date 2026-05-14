@@ -1,31 +1,88 @@
 export const passeiosData = {
-    santiago: [
-      { id: "valle-nevado", titulo: "Valle Nevado", resumo: "Estação de esqui e paisagens deslumbrantes nas montanhas nevadas.", imagem: "santiago-horizontal.jpeg" },
-      { id: "farellones", titulo: "Farellones", resumo: "Parque de neve e vila charmosa na montanha, ideal para famílias.", imagem: "santiago-farelones.jpeg" },
-      { id: "portillo", titulo: "Portillo", resumo: "Estação de esqui tradicional com a icônica e bela Laguna del Inca.", imagem: "santiago-portillobrasil.jpeg" },
-      { id: "tour-vinicola", titulo: "Tour Vinícola", resumo: "Visita às vinhas com passeio pelos barris e degustação de vinhos chilenos.", imagem: "vinhos.jpg" }
-    ],
-    atacama: [
-      { id: "valle-luna", titulo: "Valle de la Luna", resumo: "Formações rochosas, dunas imponentes e um pôr do sol inesquecível.", imagem: "atacama-luna-1.jpeg" },
-      { id: "vallecito", titulo: "Vallecito", resumo: "O famoso ônibus abandonado em um cenário que lembra a superfície lunar.", imagem: "atacama-valle.jpg" },
-      { id: "geysers-tatio", titulo: "Geysers del Tatio", resumo: "Fumarolas de vapor e águas termais no amanhecer mais frio e belo do deserto.", imagem: "atacama-geysers-fumaca.jpg" },
-      { id: "baltinache", titulo: "Lagunas de Baltinache", resumo: "Lagoas de um azul turquesa vibrante cercadas por uma vasta planície de sal branco.", imagem: "atacama-baltinache.jpeg" },
-      { id: "laguna-cejar", titulo: "Laguna Cejar", resumo: "Experimente a sensação de flutuar sem esforço em águas com altíssima concentração de sal.", imagem: "cejar.jpeg" },
-      { id: "termas-puritama", titulo: "Termas de Puritama", resumo: "Piscinas naturais de águas termais quentes escondidas no fundo de um desfiladeiro.", imagem: "atacama-termaspuritama.jpeg" },
-      { id: "valle-arcoiris", titulo: "Valle del Arco-íris", resumo: "Montanhas coloridas com faixas impressionantes de verde, vermelho e branco.", imagem: "arcoiris.jpg" },
-      { id: "piedras-rojas", titulo: "Piedras Rojas", resumo: "Contraste perfeito entre pedras vermelhas, um lago verde-água e montanhas ao fundo.", imagem: "piedras-1.jpeg" },
-      { id: "ruta-salares", titulo: "Ruta de los Salares", resumo: "Estradas cênicas no deserto com observação de lhamas, vicunhas e flamingos.", imagem: "atacama-ruta-hori.jpg" },
-      { id: "tour-astronomico", titulo: "Tour Astronômico", resumo: "Observação da Via Láctea e constelações com telescópios sob um céu estrelado impecável.", imagem: "noite.jpeg" },
-      { id: "cerro-toco", titulo: "Vulcão Cerro Toco", resumo: "Trekking de alta montanha com uma vista panorâmica espetacular do deserto.", imagem: "cerro.jpg" },
-      { id: "licancabur", titulo: "Vulcão Licancabur", resumo: "O vulcão mais icônico da região, conhecido por sua forma de cone perfeito.", imagem: "atacama-licancanbur-vulcao-hori.jpeg" },
-      { id: "lascar", titulo: "Vulcão Lascar", resumo: "Aventura extrema subindo um vulcão ativo e observando as fumarolas em sua cratera.", imagem: "lascar.jpg" },
-      { id: "cavalgada", titulo: "Cavalgada", resumo: "Um passeio a cavalo silencioso e imersivo pelas paisagens áridas do deserto.", imagem: "cavalo.jpeg" },
-      { id: "sandboard", titulo: "Sandboard", resumo: "Adrenalina pura descendo as enormes dunas de areia do deserto com pranchas.", imagem: "sand.jpeg" },
-      { id: "bike-tour", titulo: "Bike Tour", resumo: "Passeio de bicicleta explorando as formações incríveis da Garganta do Diabo.", imagem: "bike.jpeg" },
-      { id: "balao", titulo: "Passeio de Balão", resumo: "Uma vista aérea de tirar o fôlego voando em balões de ar quente sobre o Atacama.", imagem: "atacama-balao-verti.jpeg" }
-    ],
-    uyuni: [
-      { id: "expedicao-uyuni", titulo: "Expedição Uyuni", resumo: "A travessia clássica pelo deserto de sal, brincando com ilusões de ótica e o espelho d'água.", imagem: "uyuni-hero.jpg" },
-      { id: "hotel-de-sal", titulo: "Uyuni (Hotel de Sal)", resumo: "A experiência única de dormir em um hotel com interiores e camas feitos inteiramente de blocos de sal.", imagem: "uyuni-desertodesal-1.jpeg" }
-    ]
-  };
+  santiago: [
+    // Item 9: Separados por Inverno e Verão
+    { 
+      id: "valle-nevado-inverno", 
+      titulo: "Valle Nevado (Inverno)", 
+      info: "Duração: Dia Inteiro | Altitude: 3.000m", // Item 2
+      resumo: "A estação de esqui mais famosa do Chile. Neve, lazer e paisagens de tirar o fôlego na Cordilheira.", 
+      imagem: "santiago-horizontal.jpeg"
+    },
+    { 
+      id: "farellones-inverno", 
+      titulo: "Farellones (Inverno)", 
+      info: "Duração: Dia Inteiro | Ideal para famílias",
+      resumo: "Parque de diversões na neve. Perfeito para quem quer brincar com trenós, tirolesa e tubismo.", 
+      imagem: "santiago-farelones.jpeg"
+    },
+    { 
+      id: "cajon-del-maipo-verao", 
+      titulo: "Cajón del Maipo e Embalse (Verão)", 
+      info: "Duração: Dia Inteiro | Altitude: 2.500m",
+      resumo: "Cenários cinematográficos entre montanhas e o reservatório de águas esmeralda.", 
+      imagem: "santiago-cajon.jpg"
+    },
+    { 
+      id: "vinhos-santiago", 
+      titulo: "Rota das Vinícolas", 
+      info: "Duração: Meio Dia | Inclui degustação",
+      resumo: "Visita às caves e degustação dos melhores vinhos chilenos em vinícolas como Concha y Toro.", 
+      imagem: "vinhos.jpg"
+    }
+  ],
+  atacama: [
+    { 
+      id: "vallecito", 
+      titulo: "Vallecito com Magic Bus", // Item 3 corrigido
+      info: "Duração: Meio Dia | Transporte: Van / Sprinter", // Item 1 e 2
+      resumo: "Conheça o famoso 'ônibus mágico' no meio do deserto e formações geológicas lunares.", 
+      imagem: "atacama-valle.jpg"
+    },
+    { 
+      id: "piedras-rojas", 
+      titulo: "Piedras Rojas com Lagunas Altiplânicas", // Item 3 corrigido
+      info: "Duração: Dia Inteiro | Altitude: 4.200m",
+      resumo: "Um dos cenários mais bonitos do mundo: lagoas azul-turquesa e pedras avermelhadas.", 
+      imagem: "piedras-1.jpeg"
+    },
+    { 
+      id: "geysers", 
+      titulo: "Geysers del Tatio", 
+      info: "Duração: Meio Dia (Madrugada) | Altitude: 4.300m",
+      resumo: "O maior campo geotérmico do hemisfério sul. Um espetáculo de colunas de vapor.", 
+      imagem: "atacama-geysers.jpg"
+    },
+    // Item 6: Novos tours adicionados
+    { 
+      id: "vinicola-atacama", 
+      titulo: "Tour de Vinícola", 
+      info: "Duração: Meio Dia | Experiência Enológica",
+      resumo: "Degustação de vinhos de altitude produzidos em pleno deserto do Atacama.", 
+      imagem: "vinicula-blog.jpeg"
+    },
+    { 
+      id: "caravana-ancestral", 
+      titulo: "Caravana Ancestral", 
+      info: "Duração: Meio Dia | Vivência Cultural",
+      resumo: "Uma caminhada mística com lhamas, seguindo as antigas rotas comerciais atacamenhas.", 
+      imagem: "cavalo-blog.jpeg"
+    }
+  ],
+  uyuni: [
+    { 
+      id: "travessia", 
+      titulo: "Travessia Salar de Uyuni (3 ou 4 dias)", 
+      info: "Duração: 3 a 4 Dias | Logística 4x4",
+      resumo: "A maior expedição de todas. Desertos, lagunas coloridas e o maior espelho de sal do mundo.", 
+      imagem: "uyuni-hero.jpg"
+    },
+    // Item 7: Novos tours de Uyuni
+    { 
+      id: "uyuni-astronomico", 
+      titulo: "Tour Astronômico Privado Salar de Uyuni", 
+      info: "Duração: Noturno | Experiência VIP",
+      resumo: "Observação de estrelas com reflexo no salar espelhado. Fotos noturnas profissionais.", 
+      imagem: "noite.jpeg"
+    }
+  ]
+};

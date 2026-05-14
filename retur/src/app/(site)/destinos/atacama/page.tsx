@@ -48,7 +48,7 @@ export default function AtacamaPage() {
             </div>
             <div>
               <span className="font-bold text-[#221a15] block">Logística Premium</span>
-              <p className="font-inter text-sm text-slate-500 mt-1">Veículos 4x4 modernos e equipados para extremos.</p>
+              <p className="font-inter text-sm text-slate-500 mt-1">Tours realizados em Vans ou Sprinters modernas, equipadas para o terreno do deserto.</p>
             </div>
           </div>
         </div>
@@ -95,6 +95,11 @@ export default function AtacamaPage() {
               </div>
               <div className="p-8 flex flex-col flex-grow">
                 <h3 className="text-2xl font-bold mb-3 text-[#221a15] leading-tight">{tour.titulo}</h3>
+                
+                {/* --- AQUI ESTÁ A NOVA LINHA DE INFORMAÇÕES (Item 2) --- */}
+                <p className="text-[#D4773C] font-semibold text-[11px] mb-3 uppercase tracking-widest">{tour.info}</p>
+                {/* -------------------------------------------------------- */}
+
                 <p className="font-inter text-sm text-[#55433a] mb-8 leading-relaxed flex-grow">{tour.resumo}</p>
                 
                 <div className="mt-auto border-t border-slate-100 pt-6">
