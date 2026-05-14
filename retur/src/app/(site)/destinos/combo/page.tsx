@@ -16,17 +16,7 @@ export default function ComboPage() {
     { day: "DIA 7", title: "Salar de Uyuni", desc: "O grande espelho d'água, sessão de fotos com perspectiva e finalização da travessia.", icon: "landscape", img: "uyuni/uyuni-1.jpg" },
   ];
 
-  // Dados do Roteiro de 10 Dias (Mais imersivo)
-  const roteiro10Dias = [
-    { day: "DIA 1", title: "Chegada & Aclimatação", desc: "Recepção em San Pedro. Pôr do sol clássico no Valle de la Luna e Vallecito.", icon: "flight_land", img: "atacama/atacama-valle.jpg" },
-    { day: "DIA 3", title: "Geysers & Lagunas", desc: "Amanhecer nos Geysers del Tatio e flutuação nas Lagunas Escondidas de Baltinache.", icon: "water", img: "atacama/atacama-geysers-fumaca.jpg" },
-    { day: "DIA 6", title: "Fronteira Bolívia", desc: "Início da travessia 4x4 passando pela Reserva Eduardo Avaroa e suas lagoas coloridas.", icon: "directions_car", img: "uyuni/uyuni.jpg" },
-    { day: "DIA 9", title: "O Amanhecer no Salar", desc: "A imensidão do Salar de Uyuni ao nascer do sol e descanso no autêntico Hotel de Sal.", icon: "landscape", img: "uyuni/uyuni-hotel.jpg" },
-    { day: "DIA 10", title: "Retorno", desc: "Despedida do Altiplano boliviano e transfer seguro para o aeroporto ou retorno ao Chile.", icon: "flight_takeoff", img: "atacama/atacama-licancanbur-vulcao-hori.jpeg" },
-  ];
-
-  // Define qual array será renderizado com base no estado atual
-  const roteiroAtivo = roteiroDias === 7 ? roteiro7Dias : roteiro10Dias;
+  
 
   return (
     <main className="flex min-h-screen flex-col font-manrope bg-[#F8F6F3] text-[#221a15]">
