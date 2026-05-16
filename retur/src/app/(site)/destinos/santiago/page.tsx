@@ -3,9 +3,8 @@ import Image from "next/image";
 import { passeiosData } from "@/src/data/passeios";
 
 export default function SantiagoPage() {
-
   const numeroWhatsApp = "5517997697872";
-    const passeiosSantiago = passeiosData.santiago;
+  const passeiosSantiago = passeiosData.santiago;
 
   return (
     <main className="flex min-h-screen flex-col font-manrope bg-white">
@@ -95,18 +94,18 @@ export default function SantiagoPage() {
               </div>
               <div className="p-8 flex flex-col flex-grow">
                 <h3 className="text-2xl font-bold mb-3 text-[#221a15] leading-tight">{tour.titulo}</h3>
+                {tour.info && <p className="text-[#D4773C] font-semibold text-[11px] mb-3 uppercase tracking-widest">{tour.info}</p>}
                 <p className="font-inter text-sm text-[#55433a] mb-8 leading-relaxed flex-grow">{tour.resumo}</p>
                 
                 <div className="mt-auto border-t border-slate-100 pt-6">
-                  <a 
-                    href={`https://wa.me/${numeroWhatsApp}?text=Olá! Gostaria de orçar e saber mais sobre o passeio: *${tour.titulo}* no Atacama.`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="w-full bg-[#F8F6F3] text-[#D4773C] py-4 rounded-xl font-bold hover:bg-[#D4773C] hover:text-white transition-colors flex items-center justify-center gap-2 group/btn border border-[#f0dfd7]"
+                  {/* ALTERAÇÃO: Botão para a página de detalhes */}
+                  <Link 
+                    href={`/passeios/${tour.id}`}
+                    className="w-full bg-[#D4773C] text-white py-4 rounded-xl font-bold hover:bg-[#b56533] transition-colors flex items-center justify-center gap-2 group/btn shadow-md"
                   >
-                    <span className="material-symbols-outlined text-lg">chat</span>
-                    Solicitar Orçamento
-                  </a>
+                    <span className="material-symbols-outlined text-lg">visibility</span>
+                    Ver Detalhes do Passeio
+                  </Link>
                 </div>
               </div>
             </div>

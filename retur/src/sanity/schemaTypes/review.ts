@@ -1,5 +1,5 @@
 export const review = {
-  name: 'review', // Nota: está no singular
+  name: 'review', 
   title: 'Avaliações de Clientes',
   type: 'document',
   fields: [
@@ -27,6 +27,12 @@ export const review = {
       description: 'Ative para exibir esta avaliação no site.',
       type: 'boolean',
       initialValue: false, 
+    },
+    {
+      name: 'reply',
+      title: 'Resposta da Agência (Opcional)',
+      description: 'Escreva uma resposta para este viajante. Ela aparecerá publicamente no site, logo abaixo da avaliação.',
+      type: 'text',
     },
   ],
 }
