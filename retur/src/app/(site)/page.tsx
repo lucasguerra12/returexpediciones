@@ -7,12 +7,14 @@ import { ReviewsSection } from "../../components/ReviewsSection";
 export const revalidate = 3600; 
 
 async function getReviews() {
+  // AQUI FOI A MUDANÇA: Adicionamos o 'reply' e atualizamos o '_createdAt' na consulta!
   const query = `*[_type == "review" && approved == true] | order(_createdAt desc) [0...12] {
     _id,
     author,
     rating,
     comment,
-    "date": _createdAt
+    reply,
+    _createdAt
   }`;
   return client.fetch(query);
 }
