@@ -7,7 +7,6 @@ import { ReviewsSection } from "../../components/ReviewsSection";
 export const revalidate = 3600; 
 
 async function getReviews() {
-  // AQUI FOI A MUDANÇA: Adicionamos o 'reply' e atualizamos o '_createdAt' na consulta!
   const query = `*[_type == "review" && approved == true] | order(_createdAt desc) [0...12] {
     _id,
     author,
@@ -35,7 +34,7 @@ export default async function Home() {
           className="object-cover object-center" 
         />
         <div className="absolute inset-0 bg-black/40"></div>
-        <div className="relative z-10 text-center text-white px-4 max-w-4xl">
+        <div className="relative z-10 text-center text-white px-4 max-w-4xl mt-12">
           <h1 className="text-4xl md:text-7xl font-bold mb-3 tracking-tight leading-tight">
             Viva o Atacama, Santiago e o Uyuni com Quem Realmente Entende
           </h1>
