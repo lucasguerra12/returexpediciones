@@ -19,6 +19,9 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Retur Expedições | Atacama e Uyuni",
   description: "Especialistas em vivências autênticas nos desertos mais altos do mundo.",
+  verification: {
+    google: "4Jyn81y1uqEy_Mhmv_DsX-yAEaT3ny4QwDDJ-D89Jgc",
+  },
 };
 
 export default function RootLayout({
