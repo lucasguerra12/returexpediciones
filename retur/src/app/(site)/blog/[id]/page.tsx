@@ -18,8 +18,7 @@ async function getPost(slug: string) {
     body
   }`;
 
-  // Passando o $slug com segurança
-  const post = await client.fetch(query, { slug });
+  const post = await client.fetch(query, { slug }, { next: { revalidate: 60 } });
   return post;
 }
 

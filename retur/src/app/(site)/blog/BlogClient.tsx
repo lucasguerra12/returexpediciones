@@ -57,7 +57,7 @@ export default function BlogClient({ posts }: { posts: Post[] }) {
                 : "bg-white text-slate-500 border border-slate-200 hover:border-[#D4773C] hover:text-[#D4773C]"
             }`}
           >
-            {aba === "dicas" ? "Dicas de Viagem" : aba === "roteiros" ? "Roteiros" : aba}
+            {aba === "dicas" ? "Dicas de Viagem" : aba === "roteiros" ? "Roteiros" : aba === "gastronomia" ? "Gastronomia" : aba} 
           </button>
         ))}
       </div>

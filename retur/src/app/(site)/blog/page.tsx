@@ -2,7 +2,7 @@ import { client } from "../../../sanity/lib/client";
 import Link from "next/link";
 import BlogClient from "./BlogClient";
 
-export const revalidate = 120; 
+export const revalidate =60; 
 async function getPosts() {
   const query = `*[_type == "post"] | order(publishedAt desc) {
     _id,
@@ -14,8 +14,7 @@ async function getPosts() {
     publishedAt
   }`;
   
-  return client.fetch(query);
-}
+return client.fetch(query, {}, { next: { revalidate: 60 } });}
 
 export default async function BlogPage() {
   const posts = await getPosts(); 
@@ -41,7 +40,6 @@ export default async function BlogPage() {
         </div>
       </section>
 
-      {/* COMPONENTE INTERATIVO COM OS DADOS DO SANITY */}
       <BlogClient posts={posts} />
 
     </main>
